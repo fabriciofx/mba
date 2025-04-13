@@ -6,7 +6,7 @@
 
 Arquitetura cliente-servidor: tipo de arquitetura em que parte do processamento está no lado cliente e parte está no lado servidor.
 
-![Arquitetura Cliente-Servidor](./imgs/cliente-servidor.png)
+![Arquitetura Cliente-Servidor](cliente-servidor.png)
 
 #### O Protocolo HTTP(S)
 
@@ -81,7 +81,7 @@ A autenticação é o processo de verificar a identidade de um usuário, garanti
 
 Durante a autenticação, o sistema verifica as credenciais fornecidas, como nome de usuário e senha, ou outros métodos de autenticação como biometria, autenticação de dois fatores (2FA), ou autenticação baseada em tokens.
 
-![Arquitetura Cliente-Servidor](./imgs/autenticacao.png)
+![Arquitetura Cliente-Servidor](autenticacao.png)
 
 **Exemplos de autenticação:**
 
