@@ -617,3 +617,12 @@ A arquitetura de microserviços é uma abordagem em que a aplicação é dividid
         }
     }
     ```
+## Documentos
+
+[Programação Orientada a Objetos com Java - Prof. Júlio Machado](JavaOO.pdf)
+
+## Links
+
+[Monolith First - Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html)
+
+[Uma visão geral do HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Guides/Overview)
