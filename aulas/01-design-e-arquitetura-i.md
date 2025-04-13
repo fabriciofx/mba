@@ -81,6 +81,8 @@ A autenticação é o processo de verificar a identidade de um usuário, garanti
 
 Durante a autenticação, o sistema verifica as credenciais fornecidas, como nome de usuário e senha, ou outros métodos de autenticação como biometria, autenticação de dois fatores (2FA), ou autenticação baseada em tokens.
 
+![Arquitetura Cliente-Servidor](./imgs/autenticacao.png)
+
 **Exemplos de autenticação:**
 
 - Nome de usuário e senha: O usuário fornece seu nome de usuário e uma senha. Se as credenciais corresponderem a um registro válido, o usuário é autenticado.
