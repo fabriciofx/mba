@@ -3,3 +3,10 @@
 ## Resumos e anotações das aulas
 
 1. [Design e Arquitetura I - 12/04/2025](aulas/01/01-design-e-arquitetura-i.md)
+
+
+## Fotos da turma
+
+[Foto 1](fotos/foto-1-12-04-2025.jpeg)
+[Foto 2](fotos/foto-1-12-04-2025.jpeg)
+[Foto 3](fotos/foto-1-12-04-2025.jpeg)
