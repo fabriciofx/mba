@@ -8,5 +8,5 @@
 ## Fotos da turma
 
 [Foto 1](fotos/foto-1-12-04-2025.jpeg)
-[Foto 2](fotos/foto-1-12-04-2025.jpeg)
-[Foto 3](fotos/foto-1-12-04-2025.jpeg)
+[Foto 2](fotos/foto-2-12-04-2025.jpeg)
+[Foto 3](fotos/foto-3-12-04-2025.jpeg)
