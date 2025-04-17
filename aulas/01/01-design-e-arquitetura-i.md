@@ -63,15 +63,65 @@ Segue uma tabela resumo com os principais métodos HTTP e seu uso típico em API
 | HEAD    | 200 OK                    | Cabeçalhos do recurso estão disponíveis            |
 | OPTIONS | 204 No Content            | Métodos permitidos informados, sem corpo de resposta |
 
-- Categorias de status HTTP
+- Principais HTTP status code
 
-| Faixa | Tipo                | Exemplo                                           |
-|-------|---------------------|---------------------------------------------------|
-| 1xx   | Informativo         | 100 Continue                                     |
-| 2xx   | Sucesso             | 200 OK, 201 Created                              |
-| 3xx   | Redirecionamento    | 301 Moved Permanently, 304 Not Modified          |
-| 4xx   | Erro do cliente     | 400 Bad Request, 404 Not Found                   |
-| 5xx   | Erro do servidor    | 500 Internal Server Error, 503 Service Unavailable |
+    **1xx – Informativo**
+
+    | Código | Significado           | Descrição                                     |
+    |--------|-----------------------|-----------------------------------------------|
+    | 100    | Continue              | Cliente pode continuar a requisição           |
+    | 101    | Switching Protocols   | Mudança de protocolo (ex: para WebSocket)     |
+
+    ---
+
+    **2xx – Sucesso**
+
+    | Código | Significado           | Descrição                                     |
+    |--------|-----------------------|-----------------------------------------------|
+    | 200    | OK                    | Requisição bem-sucedida                       |
+    | 201    | Created               | Recurso criado com sucesso                    |
+    | 202    | Accepted              | Requisição aceita, mas ainda não processada   |
+    | 204    | No Content            | Sucesso, mas sem conteúdo na resposta         |
+
+    ---
+
+    **3xx – Redirecionamento**
+
+    | Código | Significado           | Descrição                                     |
+    |--------|-----------------------|-----------------------------------------------|
+    | 301    | Moved Permanently     | URL mudou permanentemente                    |
+    | 302    | Found                 | Redirecionamento temporário                  |
+    | 303    | See Other             | Ver outro recurso (GET)                       |
+    | 304    | Not Modified          | Recurso não mudou (útil para cache)           |
+    | 307    | Temporary Redirect    | Redirecionamento temporário (mantém método)   |
+    | 308    | Permanent Redirect    | Redirecionamento permanente (mantém método)   |
+
+    ---
+
+    **4xx – Erro do Cliente**
+
+    | Código | Significado           | Descrição                                     |
+    |--------|-----------------------|-----------------------------------------------|
+    | 400    | Bad Request           | Requisição inválida                           |
+    | 401    | Unauthorized          | Requer autenticação                           |
+    | 403    | Forbidden             | Acesso negado                                 |
+    | 404    | Not Found             | Recurso não encontrado                        |
+    | 405    | Method Not Allowed    | Método HTTP não permitido                     |
+    | 409    | Conflict              | Conflito de estado (ex: duplicado)            |
+    | 422    | Unprocessable Entity  | Entidade inválida (comum em APIs REST)        |
+    | 429    | Too Many Requests     | Muitas requisições em pouco tempo             |
+
+    ---
+
+    **5xx – Erro do Servidor**
+
+    | Código | Significado           | Descrição                                     |
+    |--------|-----------------------|-----------------------------------------------|
+    | 500    | Internal Server Error | Erro genérico do servidor                     |
+    | 501    | Not Implemented       | Funcionalidade não implementada               |
+    | 502    | Bad Gateway           | Resposta inválida do servidor intermediário   |
+    | 503    | Service Unavailable   | Servidor indisponível (manutenção/sobrecarga)|
+    | 504    | Gateway Timeout       | Tempo de resposta excedido do servidor        |
 
 #### Autenticação vs. Autorização
 
