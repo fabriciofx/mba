@@ -33,35 +33,35 @@ Segue uma tabela resumo com os principais métodos HTTP e seu uso típico em API
 
 - Exemplos práticos com recurso `usuarios`
 
-| Verbo  | Rota REST       | Ação                                      |
-|--------|------------------|------------------------------------------|
-| GET    | /usuarios        | Retorna a lista de usuários              |
-| GET    | /usuarios/42     | Retorna dados do usuário com ID 42       |
-| POST   | /usuarios        | Cria um novo usuário                     |
-| PUT    | /usuarios/42     | Atualiza totalmente o usuário 42         |
-| PATCH  | /usuarios/42     | Atualiza parcialmente o usuário 42       |
-| DELETE | /usuarios/42     | Remove o usuário com ID 42               |
+    | Verbo  | Rota REST       | Ação                                      |
+    |--------|------------------|------------------------------------------|
+    | GET    | /usuarios        | Retorna a lista de usuários              |
+    | GET    | /usuarios/42     | Retorna dados do usuário com ID 42       |
+    | POST   | /usuarios        | Cria um novo usuário                     |
+    | PUT    | /usuarios/42     | Atualiza totalmente o usuário 42         |
+    | PATCH  | /usuarios/42     | Atualiza parcialmente o usuário 42       |
+    | DELETE | /usuarios/42     | Remove o usuário com ID 42               |
 
 - Verbos HTTP x Status Codes comuns
 
-| Verbo   | Status Code               | Significado                                         |
-|---------|---------------------------|-----------------------------------------------------|
-| GET     | 200 OK                    | Sucesso ao buscar recurso                          |
-|         | 304 Not Modified          | Conteúdo não mudou (cache)                         |
-|         | 404 Not Found             | Recurso não encontrado                             |
-| POST    | 201 Created               | Recurso criado com sucesso                         |
-|         | 400 Bad Request           | Dados inválidos ou malformados                     |
-|         | 409 Conflict              | Conflito ao tentar criar (ex: duplicidade)         |
-| PUT     | 200 OK / 204 No Content   | Atualização feita com sucesso                      |
-|         | 404 Not Found             | Recurso a ser atualizado não existe                |
-|         | 400 Bad Request           | Dados inválidos                                    |
-| PATCH   | 200 OK / 204 No Content   | Atualização parcial feita com sucesso              |
-|         | 400 Bad Request           | Dados inválidos                                    |
-|         | 404 Not Found             | Recurso não existe                                 |
-| DELETE  | 200 OK / 204 No Content   | Recurso deletado com sucesso                       |
-|         | 404 Not Found             | Recurso já não existe                              |
-| HEAD    | 200 OK                    | Cabeçalhos do recurso estão disponíveis            |
-| OPTIONS | 204 No Content            | Métodos permitidos informados, sem corpo de resposta |
+    | Verbo   | Status Code               | Significado                                         |
+    |---------|---------------------------|-----------------------------------------------------|
+    | GET     | 200 OK                    | Sucesso ao buscar recurso                          |
+    |         | 304 Not Modified          | Conteúdo não mudou (cache)                         |
+    |         | 404 Not Found             | Recurso não encontrado                             |
+    | POST    | 201 Created               | Recurso criado com sucesso                         |
+    |         | 400 Bad Request           | Dados inválidos ou malformados                     |
+    |         | 409 Conflict              | Conflito ao tentar criar (ex: duplicidade)         |
+    | PUT     | 200 OK / 204 No Content   | Atualização feita com sucesso                      |
+    |         | 404 Not Found             | Recurso a ser atualizado não existe                |
+    |         | 400 Bad Request           | Dados inválidos                                    |
+    | PATCH   | 200 OK / 204 No Content   | Atualização parcial feita com sucesso              |
+    |         | 400 Bad Request           | Dados inválidos                                    |
+    |         | 404 Not Found             | Recurso não existe                                 |
+    | DELETE  | 200 OK / 204 No Content   | Recurso deletado com sucesso                       |
+    |         | 404 Not Found             | Recurso já não existe                              |
+    | HEAD    | 200 OK                    | Cabeçalhos do recurso estão disponíveis            |
+    | OPTIONS | 204 No Content            | Métodos permitidos informados, sem corpo de resposta |
 
 - Principais HTTP status code
 
