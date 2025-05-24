@@ -2,86 +2,24 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="189.81203mm"
+   height="175.29698mm"
+   viewBox="0 0 189.81203 175.29698"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
-   sodipodi:docname="dependencia.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     inkscape:zoom="0.71090067"
-     inkscape:cx="397.38322"
-     inkscape:cy="561.25984"
-     inkscape:window-width="1920"
-     inkscape:window-height="975"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
   <defs
      id="defs1">
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect14"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect11"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect8"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
     <marker
        style="overflow:visible"
        id="Triangle"
        refX="0"
        refY="0"
        orient="auto-start-reverse"
-       inkscape:stockid="Triangle arrow"
        markerWidth="1"
        markerHeight="1"
        viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
        preserveAspectRatio="xMidYMid">
       <path
          transform="scale(0.5)"
@@ -89,30 +27,11 @@
          d="M 5.77,0 -2.88,5 V -5 Z"
          id="path135" />
     </marker>
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="-1.8593599 : 90.116097 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="188.43143 : 92.347329 : 1"
-       inkscape:persp3d-origin="105 : 99 : 1"
-       id="perspective16" />
   </defs>
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
      id="layer1"
-     style="display:inline">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87777px;font-family:Arial;-inkscape-font-specification:Arial;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
-       x="171.08171"
-       y="29.420122"
-       id="text31"><tspan
-         sodipodi:role="line"
-         id="tspan31"
-         style="fill:#000000;stroke:#000000;stroke-width:0.1"
-         x="171.08171"
-         y="29.420122" /></text>
+     style="display:inline"
+     transform="translate(-10.093988,-60.851515)">
     <g
        id="g22"
        transform="translate(7.7599032,-4.0252762)">
@@ -141,7 +60,6 @@
              x="65.324493"
              y="106.24061"
              id="text1"><tspan
-               sodipodi:role="line"
                id="tspan1"
                style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87777px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0;stroke-dasharray:none"
                x="65.324493"
@@ -163,7 +81,6 @@
            x="71.647614"
            y="153.8378"
            id="text2"><tspan
-             sodipodi:role="line"
              id="tspan2"
              style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87777px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0;stroke-dasharray:none"
              x="71.647614"
@@ -183,7 +100,6 @@
              x="63.139614"
              y="201.1442"
              id="text4"><tspan
-               sodipodi:role="line"
                id="tspan4"
                style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87777px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0;stroke-dasharray:none"
                x="63.139614"
@@ -192,15 +108,13 @@
         <path
            style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle)"
            d="M 89.218275,67.435784 V 83.952999"
-           id="path23"
-           sodipodi:nodetypes="cc" />
+           id="path23" />
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87777px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
            x="17.467169"
            y="122.82636"
            id="text23"><tspan
-             sodipodi:role="line"
              id="tspan23"
              style="fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
              x="17.467169"
@@ -208,20 +122,17 @@
         <path
            style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle)"
            d="m 89.218275,115.0354 v 16.51722"
-           id="path24"
-           sodipodi:nodetypes="cc" />
+           id="path24" />
         <path
            style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle)"
            d="M 89.218275,163.00689 V 179.5241"
-           id="path25"
-           sodipodi:nodetypes="cc" />
+           id="path25" />
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87777px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
            x="19.119085"
            y="169.78662"
            id="text3"><tspan
-             sodipodi:role="line"
              id="tspan3"
              style="fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
              x="19.119085"
@@ -246,17 +157,14 @@
                x="177.51143"
                y="142.821"
                id="text5"><tspan
-                 sodipodi:role="line"
                  id="tspan5"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
                  x="177.51143"
                  y="142.821">Estrutura</tspan><tspan
-                 sodipodi:role="line"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
                  x="177.51143"
                  y="151.64044"
                  id="tspan7">de</tspan><tspan
-                 sodipodi:role="line"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
                  x="177.51143"
                  y="160.4599"
@@ -265,8 +173,7 @@
           <path
              style="fill:none;stroke:#000000;stroke-width:1;marker-start:url(#Triangle)"
              d="m 130.61902,101.53295 c 0,0 7.80257,-5.059083 17.60663,-5.545372 17.54648,-0.696534 20.04747,7.833972 19.26805,8.223682"
-             id="path14"
-             sodipodi:nodetypes="ccc" />
+             id="path14" />
         </g>
         <g
            id="g17"
@@ -288,17 +195,14 @@
                x="177.51143"
                y="142.821"
                id="text16"><tspan
-                 sodipodi:role="line"
                  id="tspan14"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
                  x="177.51143"
                  y="142.821">Estrutura</tspan><tspan
-                 sodipodi:role="line"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
                  x="177.51143"
                  y="151.64044"
                  id="tspan15">de</tspan><tspan
-                 sodipodi:role="line"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
                  x="177.51143"
                  y="160.4599"
@@ -307,8 +211,7 @@
           <path
              style="fill:none;stroke:#000000;stroke-width:1;marker-start:url(#Triangle)"
              d="m 130.61902,101.53295 c 0,0 7.80257,-5.059083 17.60663,-5.545372 17.54648,-0.696534 20.04747,7.833972 19.26805,8.223682"
-             id="path16"
-             sodipodi:nodetypes="ccc" />
+             id="path16" />
         </g>
         <g
            id="g20"
@@ -330,17 +233,14 @@
                x="177.51143"
                y="142.821"
                id="text19"><tspan
-                 sodipodi:role="line"
                  id="tspan17"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
                  x="177.51143"
                  y="142.821">Estrutura</tspan><tspan
-                 sodipodi:role="line"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
                  x="177.51143"
                  y="151.64044"
                  id="tspan18">de</tspan><tspan
-                 sodipodi:role="line"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
                  x="177.51143"
                  y="160.4599"
@@ -349,8 +249,7 @@
           <path
              style="fill:none;stroke:#000000;stroke-width:1;marker-start:url(#Triangle)"
              d="m 130.61902,101.53295 c 0,0 7.80257,-5.059083 17.60663,-5.545372 17.54648,-0.696534 20.04747,7.833972 19.26805,8.223682"
-             id="path19"
-             sodipodi:nodetypes="ccc" />
+             id="path19" />
         </g>
       </g>
     </g>
