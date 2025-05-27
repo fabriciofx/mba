@@ -1,5 +1,9 @@
 # MBA Full Stack Web Development (2025/2026)
 
+## Cronograma das aulas
+
+![Cronograma 2025/2026 - Turma 06](https://bit.ly/cronograma_t06_full_stack)
+
 ## Resumos e anotações das aulas
 
 1. [Design e Arquitetura I - 12/04/2025](aulas/01/01-design-e-arquitetura-i.md)
