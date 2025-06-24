@@ -15,6 +15,7 @@
      Hexagonal](aulas/04/04-arquitetura-hexagonal-carlos-barbosa-filho-24-05-2025.pdf)
 5. [Microservices I - 07/06/2025](aulas/05/05-microservices-i.md)
    - [Material do prof. Carlos Barbosa Filho, sobre Microservices](aulas/05/05-microservices-i-carlos-barbosa-filho-07-06-2025.pdf)
+6. [Microservices II - 14/06/2025](aulas/06/06-microservices-ii.md)
 
 ## Fotos da turma
 
