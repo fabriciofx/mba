@@ -13,6 +13,8 @@
 4. [Design e Arquitetura II - 24/05/2025](aulas/04/04-design-e-arquitetura-ii.md)
    - [Material do prof. Carlos Barbosa Filho, sobre Arquitetura
      Hexagonal](aulas/04/04-arquitetura-hexagonal-carlos-barbosa-filho-24-05-2025.pdf)
+5. [Microservices I - 07/06/2025](aulas/05/05-microservices-i.md)
+   - [Material do prof. Carlos Barbosa Filho, sobre Microservices](aulas/05/05-microservices-i-carlos-barbosa-filho-07-06-2025.pdf)
 
 ## Fotos da turma
 
