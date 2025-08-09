@@ -18,7 +18,7 @@ h2 {
     background-color: lightskyblue;
 }
 
-img {
+#avatar {
     width: 20%;
     object-fit: cover;
     border-radius: 50%;
