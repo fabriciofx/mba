@@ -1,0 +1,33 @@
+:root {
+    font-family: Roboto;
+    color: darkslategray;
+}
+
+a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    color: darkblue;
+}
+
+h2 {
+    color: darkblue;
+    background-color: lightskyblue;
+}
+
+img {
+    width: 20%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+dt {
+    font-weight: bold;
+}
+
+#copyright {
+    text-align: center;
+}
