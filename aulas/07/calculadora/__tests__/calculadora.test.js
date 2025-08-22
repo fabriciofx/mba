@@ -42,3 +42,12 @@ test(
     );
   }
 );
+
+test(
+  "Dividir 2 e 0 deve dar erro",
+  () => {
+    expect(new Calculadora(2, 0).div()).toBe(
+      "Erro: não é possível realizar a divisão de 2 por zero!"
+    );
+  }
+);
