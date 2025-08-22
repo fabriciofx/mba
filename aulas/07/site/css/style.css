@@ -1,33 +1,45 @@
-:root {
-    font-family: Roboto;
+body {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
     color: darkslategray;
 }
 
 a {
     color: darkblue;
-    text-decoration: none;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 h1 {
+    font-size: 30px;
     text-align: center;
     color: darkblue;
 }
 
 h2 {
+    font-size: 24px;
     color: darkblue;
     background-color: lightskyblue;
-}
-
-#avatar {
-    width: 20%;
-    object-fit: cover;
-    border-radius: 50%;
 }
 
 dt {
     font-weight: bold;
 }
 
-#copyright {
+.text-center {
+    font-weight: bold;
+    font-style: italic;
     text-align: center;
+}
+
+#avatar {
+    width: 20%;
+    object-fit: cover;
+    border-radius: 50%;
 }
