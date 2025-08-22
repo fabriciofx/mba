@@ -1,0 +1,21 @@
+{
+  "name": "adivinhacao",
+  "version": "0.0.1",
+  "description": "Um jogo de adivinhação",
+  "keywords": [
+    "jogo",
+    "adivinhação",
+    "javascript",
+    "es"
+  ],
+  "license": "MIT",
+  "author": "Fabrício Barros Cabral",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5"
+  }
+}
