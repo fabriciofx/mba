@@ -7,7 +7,7 @@
   "type": "module",
   "main": "calculadora.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js"
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
