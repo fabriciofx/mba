@@ -11,5 +11,8 @@
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5"
   }
 }
