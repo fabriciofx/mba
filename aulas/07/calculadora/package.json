@@ -4,7 +4,7 @@
   "description": "Uma calculadora de console",
   "license": "MIT",
   "author": "Fabrício Barros Cabral",
-  "type": "commonjs",
+  "type": "module",
   "main": "calculadora.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
