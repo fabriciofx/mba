@@ -1,10 +1,12 @@
 export class Calculadora {
   #num1;
   #num2;
+  #digitos
 
-  constructor(num1, num2) {
+  constructor(num1, num2, digitos = 8) {
     this.#num1 = num1;
     this.#num2 = num2;
+    this.#digitos = digitos;
   }
 
   soma() {
@@ -24,7 +26,7 @@ export class Calculadora {
 
   div() {
     let msg;
-    const result = this.#num1 / this.#num2;
+    const result = Number((this.#num1 / this.#num2).toFixed(this.#digitos));
     if (this.#num2 === 0) {
       msg = `Erro: não é possível realizar a divisão de ${this.#num1} por zero!`;
     } else {

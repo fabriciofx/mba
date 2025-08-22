@@ -35,10 +35,10 @@ test(
 );
 
 test(
-  "Dividir 2 e 3 deve dar 0.6666666666666666",
+  "Dividir 2 e 3 deve dar 0.66666667",
   () => {
     expect(new Calculadora(2, 3).div()).toBe(
-      "A divisão entre 2 e 3 é 0.6666666666666666"
+      "A divisão entre 2 e 3 é 0.66666667"
     );
   }
 );
