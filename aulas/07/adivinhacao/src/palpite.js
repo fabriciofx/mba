@@ -1,17 +1,17 @@
 import { Intervalo } from "./intervalo.js";
 
 export class Palpite {
-  #console;
+  #ui;
   #ultimo;
 
-  constructor(console) {
-    this.#console = console;
+  constructor(ui) {
+    this.#ui = ui;
     this.#ultimo = [];
   }
 
   intervalo(intervalo) {
     if (intervalo != null) {
-      this.#console.mostre(
+      this.#ui.mostre(
         `Adivinhe um número entre ${intervalo.min()} e ${intervalo.max()}: `
       );
       this.#ultimo.push(
@@ -19,7 +19,7 @@ export class Palpite {
           intervalo.min(),
           intervalo.max(),
           intervalo.secreto(),
-          new Number(this.#console.leia())
+          new Number(this.#ui.leia())
         )
       );
     }

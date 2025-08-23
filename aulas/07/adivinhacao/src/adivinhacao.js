@@ -5,22 +5,22 @@ import { Tentativas } from "./tentativas.js";
 import { Despedida } from "./despedida.js";
 
 export class Adivinhacao {
-  #console;
+  #ui;
   #aleatorio;
 
-  constructor(console, aleatorio) {
-    this.#console = console;
+  constructor(ui, aleatorio) {
+    this.#ui = ui;
     this.#aleatorio = aleatorio;
   }
 
   execute() {
     const secreto = this.#aleatorio.numero();
-    this.#console.mostre(
+    this.#ui.mostre(
       new Despedida(
         new Tentativas(
           new Comparacao(
             secreto,
-            new Palpite(this.#console),
+            new Palpite(this.#ui),
             new Intervalo(
               this.#aleatorio.min(),
               this.#aleatorio.max(),
