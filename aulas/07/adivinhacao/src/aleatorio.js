@@ -3,7 +3,7 @@ class Aleatorio {
   valor() { throw new Error("Método 'valor' precisa ser implementado"); }
 }
 
-export class Numero extends Aleatorio {
+export class IntAleatorio extends Aleatorio {
   #min;
   #max;
 
