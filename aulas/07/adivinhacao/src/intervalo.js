@@ -4,7 +4,7 @@ export class Intervalo {
   #secreto;
   #numero;
 
-  constructor(min, max, secreto, numero) {
+  constructor(min, max, secreto, numero = 100) {
     this.#min = min;
     this.#max = max;
     this.#secreto = secreto;
@@ -25,5 +25,13 @@ export class Intervalo {
       max = this.#numero;
     }
     return max;
+  }
+
+  numero() {
+    return this.#numero;
+  }
+
+  secreto() {
+    return this.#secreto;
   }
 }

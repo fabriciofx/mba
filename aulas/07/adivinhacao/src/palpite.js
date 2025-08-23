@@ -1,18 +1,28 @@
+import { Intervalo } from "./intervalo.js";
+
 export class Palpite {
   #console;
-  #min;
-  #max;
+  #ultimo;
 
-  constructor(console, min, max) {
+  constructor(console) {
     this.#console = console;
-    this.#min = min;
-    this.#max = max;
+    this.#ultimo = [];
   }
 
-  numero() {
+  intervalo(intervalo) {
+    if (intervalo != null) {
       this.#console.escreve(
-        `Adivinhe um número entre ${this.#min} e ${this.#max}: `
+        `Adivinhe um número entre ${intervalo.min()} e ${intervalo.max()}: `
       );
-      return Number(this.#console.le());
+      this.#ultimo.push(
+        new Intervalo(
+          intervalo.min(),
+          intervalo.max(),
+          intervalo.secreto(),
+          new Number(this.#console.le())
+        )
+      );
+    }
+    return this.#ultimo.at(-1);
   }
 }

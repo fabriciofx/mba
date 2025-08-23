@@ -13,6 +13,7 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
+    "start": "node src/app.js",
     "test": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js"
   },
   "devDependencies": {
