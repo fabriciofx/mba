@@ -19,28 +19,28 @@ export class Adivinhacao extends Jogo {
   }
 
   execute() {
-    const escolhido = this.#aleatorio.valor();
+    const secreto = this.#aleatorio.valor();
     let min = this.#aleatorio.min();
     let max = this.#aleatorio.max();
     let acertou = false;
     for(let tentativa = 0; tentativa < this.#tentativas; tentativa++) {
       let num = new Palpite(this.#console, min, max).numero();
-      if (num === escolhido) {
+      if (num === secreto) {
         this.#console.escreve("Parabéns! Você acertou o número!\n");
         acertou = true;
         break;
       } else {
-        if (num > escolhido) {
+        if (num > secreto) {
           max = num;
         }
-        if (num < escolhido) {
+        if (num < secreto) {
           min = num;
         }
       }
     }
     if (!acertou) {
       this.#console.escreve(
-        `Suas tentativas acabaram! O número oculto era ${escolhido}!\n`
+        `Suas tentativas acabaram! O número secreto era ${secreto}!\n`
       );
     }
   }
