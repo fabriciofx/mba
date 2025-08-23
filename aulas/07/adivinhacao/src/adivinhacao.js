@@ -14,8 +14,8 @@ export class Adivinhacao {
   }
 
   execute() {
-    const secreto = this.#aleatorio.valor();
-    this.#console.escreve(
+    const secreto = this.#aleatorio.numero();
+    this.#console.mostre(
       new Despedida(
         new Tentativas(
           new Comparacao(

@@ -11,7 +11,7 @@ export class Palpite {
 
   intervalo(intervalo) {
     if (intervalo != null) {
-      this.#console.escreve(
+      this.#console.mostre(
         `Adivinhe um número entre ${intervalo.min()} e ${intervalo.max()}: `
       );
       this.#ultimo.push(
@@ -19,7 +19,7 @@ export class Palpite {
           intervalo.min(),
           intervalo.max(),
           intervalo.secreto(),
-          new Number(this.#console.le())
+          new Number(this.#console.leia())
         )
       );
     }

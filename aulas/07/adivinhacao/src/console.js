@@ -4,11 +4,11 @@ export class Console {
   constructor() {
   }
 
-  escreve(msg) {
+  mostre(msg) {
     process.stdout.write(msg);
   }
 
-  le() {
+  leia() {
     return rls.question('');
   }
 }

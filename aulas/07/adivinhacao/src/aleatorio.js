@@ -8,7 +8,7 @@ export class Aleatorio {
     this.#max = max;
   }
 
-  valor() {
+  numero() {
     return Math.floor(Math.random() * (this.#max - this.#min + 1)) + this.#min;
   }
 
