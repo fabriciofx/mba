@@ -1,14 +1,9 @@
 // Interface
-class Aleatorio {
-  valor() { throw new Error("Método 'valor' precisa ser implementado"); }
-}
-
-export class IntAleatorio extends Aleatorio {
+export class IntAleatorio {
   #min;
   #max;
 
   constructor(min = 1, max = 100) {
-    super();
     this.#min = min;
     this.#max = max;
   }

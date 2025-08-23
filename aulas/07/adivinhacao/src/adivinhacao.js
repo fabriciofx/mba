@@ -4,18 +4,11 @@ import { Intervalo } from "./intervalo.js";
 import { Tentativas } from "./tentativas.js";
 import { Despedida } from "./despedida.js";
 
-// Interfaces
-class Jogo {
-  execute() { throw new Error("Método 'execute' precisa ser implementado"); }
-}
-
-// Classes
-export class Adivinhacao extends Jogo {
+export class Adivinhacao {
   #console;
   #aleatorio;
 
   constructor(console, aleatorio) {
-    super();
     this.#console = console;
     this.#aleatorio = aleatorio;
   }
