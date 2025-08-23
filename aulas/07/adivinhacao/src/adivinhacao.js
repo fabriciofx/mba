@@ -1,6 +1,8 @@
+import { Palpite } from "./palpite.js";
+
 // Interfaces
 class Jogo {
-  execute() { throw new Error("Método 'executa' precisa ser implementado"); }
+  execute() { throw new Error("Método 'execute' precisa ser implementado"); }
 }
 
 // Classes
@@ -21,10 +23,8 @@ export class Adivinhacao extends Jogo {
     let min = this.#aleatorio.min();
     let max = this.#aleatorio.max();
     let acertou = false;
-    this.#console.escreve(`Escolhido: ${escolhido}\n`)
     for(let tentativa = 0; tentativa < this.#tentativas; tentativa++) {
-      this.#console.escreve(`Adivinhe um número entre ${min} e ${max}: `);
-      let num = Number(this.#console.le());
+      let num = new Palpite(this.#console, min, max).numero();
       if (num === escolhido) {
         this.#console.escreve("Parabéns! Você acertou o número!\n");
         acertou = true;
