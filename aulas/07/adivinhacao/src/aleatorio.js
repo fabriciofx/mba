@@ -1,5 +1,5 @@
 // Interface
-export class IntAleatorio {
+export class Aleatorio {
   #min;
   #max;
 

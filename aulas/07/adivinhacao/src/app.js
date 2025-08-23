@@ -1,6 +1,6 @@
 import { Console } from "./console.js";
-import { IntAleatorio } from "./aleatorio.js";
+import { Aleatorio } from "./aleatorio.js";
 import { Adivinhacao } from "./adivinhacao.js";
 
-const jogo = new Adivinhacao(new Console(), new IntAleatorio());
+const jogo = new Adivinhacao(new Console(), new Aleatorio());
 jogo.execute();
