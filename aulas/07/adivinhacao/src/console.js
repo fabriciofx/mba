@@ -1,6 +1,6 @@
 import rls from "readline-sync";
 
-export class ConsolePadrao {
+export class Console {
   constructor() {
   }
 
