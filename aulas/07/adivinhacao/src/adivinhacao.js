@@ -1,4 +1,6 @@
 import { Palpite } from "./palpite.js";
+import { Comparacao } from "./comparacao.js";
+import { Intervalo } from "./intervalo.js";
 
 // Interfaces
 class Jogo {
@@ -22,26 +24,19 @@ export class Adivinhacao extends Jogo {
     const secreto = this.#aleatorio.valor();
     let min = this.#aleatorio.min();
     let max = this.#aleatorio.max();
-    let acertou = false;
     for(let tentativa = 0; tentativa < this.#tentativas; tentativa++) {
-      let num = new Palpite(this.#console, min, max).numero();
-      if (num === secreto) {
+      const num = new Palpite(this.#console, min, max).numero();
+      const acertou = new Comparacao(secreto, num).resultado();
+      if (acertou) {
         this.#console.escreve("Parabéns! Você acertou o número!\n");
-        acertou = true;
-        break;
       } else {
-        if (num > secreto) {
-          max = num;
-        }
-        if (num < secreto) {
-          min = num;
-        }
+        const intervalo = new Intervalo(min, max, secreto, num);
+        min = intervalo.min();
+        max = intervalo.max();
       }
     }
-    if (!acertou) {
-      this.#console.escreve(
-        `Suas tentativas acabaram! O número secreto era ${secreto}!\n`
-      );
-    }
+    this.#console.escreve(
+      `Suas tentativas acabaram! O número secreto era ${secreto}!\n`
+    );
   }
 }
