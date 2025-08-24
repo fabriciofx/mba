@@ -1,6 +1,5 @@
 import fs from "fs";
-import { stdin } from 'process';
-import { Readable } from 'stream';
+import { Stream } from "stream";
 
 export class Console {
   #input;
@@ -11,54 +10,34 @@ export class Console {
     this.#input = input;
   }
 
-  #isStdin(stream) {
-    let check = false;
-    if (!(stream instanceof Readable)) {
-      check = false;
-    } else if (stream === stdin) {
-      check = true;
-    } else if (typeof stream.fd === 'number' && stream.fd === 0) {
-      check = true;
-    }
-    return check;
-  }
-
   mostre(msg) {
     this.#output.write(msg);
   }
 
   leia() {
-    let dados = "";
-    if (this.#isStdin(this.#input)) {
-      const raw = this.#input.isRaw;
-      this.#input.setRawMode(true);
-      const buffer = Buffer.alloc(1);
+    let data = "";
+    const size = 1024;
+    if (this.#input instanceof Stream &&
+      "fd" in this.#input &&
+      typeof this.#input.fd === "number"
+    ) {
+      const buffer = Buffer.alloc(size);
       while (true) {
-        let read = 0;
         try {
-          read = fs.readSync(this.#input.fd, buffer, 0, 1, null);
+          const read = fs.readSync(this.#input.fd, buffer, 0, size, null);
+          data = buffer.toString("utf8", 0, read).replace(/[\r\n]+$/, "");
         } catch (err) {
           if (err.code === 'EAGAIN') {
             continue;
           }
           throw err;
         }
-        if (read === 0) {
-          continue;
-        }
-        const chr = buffer.toString("utf8");
-        if (chr === "\r" || chr === "\n") {
-          break;
-        } else {
-          dados = dados + chr;
-          this.#output.write(chr);
-        }
+        break;
       }
-      this.#input.setRawMode(raw);
-      this.#output.write("\r\n");
     } else {
-      this.#input.read
+      this.#input.setEncoding("utf-8");
+      data = this.#input.read(size);
     }
-    return dados;
+    return data;
   }
 }
