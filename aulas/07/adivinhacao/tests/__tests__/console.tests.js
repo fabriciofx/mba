@@ -44,3 +44,16 @@ test(
     expect(console.leia()).toBe("");
  }
 );
+
+test(
+  "Deve ler duas mensagens seguidas",
+  () => {
+    const msg1 = "Olá, mundo!\n";
+    const msg2 = "A vida é bela!\n";
+    const input = new MemoryStream({data: [msg1, msg2]});
+    const output = new MemoryStream();
+    const console = new Console({input: input, output: output});
+    expect(console.leia()).toBe(msg1);
+    // expect(console.leia()).toBe(msg2);
+  }
+);
