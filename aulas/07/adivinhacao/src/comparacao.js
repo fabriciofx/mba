@@ -10,7 +10,7 @@ export class Comparacao {
   }
 
   igual() {
-    this.#turno.push(this.#palpite.intervalo(this.#turno.pop()));
+    this.#turno.push(this.#palpite.turno(this.#turno.pop()));
     return this.#turno.at(0).numero() == this.#secreto;
   }
 
