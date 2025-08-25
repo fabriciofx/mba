@@ -1,4 +1,3 @@
-// Interface
 export class Aleatorio {
   #min;
   #max;
