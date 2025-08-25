@@ -1,5 +1,44 @@
 import { Duplex } from "stream";
 
+class MemoryArea {
+  #area;
+  #offset;
+
+  constructor(data = []) {
+    this.#area = Buffer.concat(data.map(datum => Buffer.from(datum)));
+    this.#offset = 0;
+  }
+
+  write(chunk, encoding, callback) {
+    let tmp;
+    if (Buffer.isBuffer(chunk)) {
+      tmp = chunk;
+    } else {
+      tmp = Buffer.from(chunk, encoding);
+    }
+    this.#area = Buffer.concat([this.#area, tmp]);
+    callback();
+  }
+
+  read(size) {
+    const length = typeof size !== "undefined" ? this.#offset + size : 65536;
+    const chunk = this.#area.subarray(this.#offset, length);
+    this.#offset = this.#offset + chunk.length;
+    return chunk;
+  }
+  size() {
+    return this.#area.length - this.#offset;
+  }
+
+  content() {
+    return this.#area;
+  }
+
+  toString(encoding = "utf8") {
+    return this.content().toString(encoding);
+  }
+}
+
 class FixedBuffer {
   #data;
   #offset;
@@ -72,7 +111,7 @@ export class MemoryStream extends Duplex {
 
   constructor({options, data = []} = {}) {
     super(options);
-    this.#buffer = new FixedBuffer(data);
+    this.#buffer = new MemoryArea(data);
   }
 
   _write(chunk, encoding, callback) {

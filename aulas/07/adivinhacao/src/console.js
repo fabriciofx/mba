@@ -27,7 +27,7 @@ export class Console {
           const read = fs.readSync(this.#input.fd, buffer, 0, size, null);
           data = buffer.toString("utf8", 0, read).replace(/[\r\n]+$/, "");
         } catch (err) {
-          if (err.code === 'EAGAIN') {
+          if (err.code === "EAGAIN") {
             continue;
           }
           throw err;
@@ -35,10 +35,15 @@ export class Console {
         break;
       }
     } else {
-      const buffer = this.#input.read(size);
-      if (buffer != null) {
-        data = buffer.toString();
+      const buffer = [];
+      while (true) {
+        const byte = this.#input.read(1);
+        if (byte.length == 0 || byte == "\n" || byte == "\r") {
+          break;
+        }
+        buffer.push(byte);
       }
+      data = Buffer.concat(buffer).toString();
     }
     return data;
   }

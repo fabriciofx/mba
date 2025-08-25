@@ -38,7 +38,8 @@ test(
     const msg1 = "Olá, mundo!";
     const msg2 = "A vida é bela!";
     const stream = new MemoryStream({data: [msg1, msg2]});
-    const data = stream.read().toString();
+    const length = Buffer.from(msg1).length + Buffer.from(msg2).length;
+    const data = stream.read(length).toString();
     expect(data).toBe(msg1 + msg2);
   }
 );
@@ -52,10 +53,10 @@ test(
 );
 
 test(
-  "Lê null quando tenta ler de um do vazio",
+  "Deve retornar um buffer vazio ao tentar ler de um stream vazio",
   () => {
     const stream = new MemoryStream();
-    expect(stream.read()).toBe(null);
+    expect(stream.read().length).toBe(0);
   }
 );
 
@@ -104,5 +105,24 @@ test(
     const stream = new MemoryStream({data: [msg1, msg2]});
     stream.read(length1);
     expect(stream.size()).toBe(length2);
+  }
+);
+
+test(
+  "Deve ler parcialmente a primeira metade do conteúdo",
+  () => {
+    const msg = "Olá, mundo!";
+    const stream = new MemoryStream({data: [msg]});
+    expect(stream.read(4).toString()).toBe("Olá");
+  }
+);
+
+test(
+  "Deve ler parcialmente a segunda metade do conteúdo",
+  () => {
+    const msg = "Olá, mundo!";
+    const stream = new MemoryStream({data: [msg]});
+    stream.read(4);
+    expect(stream.read().toString()).toBe(", mundo!");
   }
 );

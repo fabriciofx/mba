@@ -51,9 +51,8 @@ test(
     const msg1 = "Olá, mundo!\n";
     const msg2 = "A vida é bela!\n";
     const input = new MemoryStream({data: [msg1, msg2]});
-    const output = new MemoryStream();
-    const console = new Console({input: input, output: output});
-    expect(console.leia()).toBe(msg1);
-    // expect(console.leia()).toBe(msg2);
+    const console = new Console({input: input});
+    expect(console.leia()).toBe(msg1.replace(/[\r\n]+$/, ""));
+    expect(console.leia()).toBe(msg2.replace(/[\r\n]+$/, ""));
   }
 );
