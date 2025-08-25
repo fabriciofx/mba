@@ -35,11 +35,9 @@ export class Console {
         break;
       }
     } else {
-      data = this.#input.read(size);
-      if (data == null) {
-        data = "";
-      } else {
-        data = data.toString();
+      const buffer = this.#input.read(size);
+      if (buffer != null) {
+        data = buffer.toString();
       }
     }
     return data;
