@@ -1,8 +1,8 @@
-import { Palpite } from "./palpite.js";
-import { Comparacao } from "./comparacao.js";
-import { Intervalo } from "./intervalo.js";
-import { Tentativas } from "./tentativas.js";
-import { Despedida } from "./despedida.js";
+import { Palpite } from "#src/palpite.js";
+import { Comparacao } from "#src/comparacao.js";
+import { Intervalo } from "#src/intervalo.js";
+import { Tentativas } from "#src/tentativas.js";
+import { Despedida } from "#src/despedida.js";
 
 export class Adivinhacao {
   #ui;

@@ -1,4 +1,4 @@
-import { Intervalo } from "./intervalo.js";
+import { Intervalo } from "#src/intervalo.js";
 
 export class Palpite {
   #ui;
@@ -19,7 +19,7 @@ export class Palpite {
           intervalo.min(),
           intervalo.max(),
           intervalo.secreto(),
-          new Number(this.#ui.leia())
+          Number(this.#ui.leia())
         )
       );
     }
