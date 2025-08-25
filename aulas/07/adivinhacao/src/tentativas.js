@@ -16,6 +16,6 @@ export class Tentativas {
   }
 
   secreto() {
-    return this.#comparacao.palpite().intervalo().secreto();
+    return this.#comparacao.palpite().turno().secreto();
   }
 }
