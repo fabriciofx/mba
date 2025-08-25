@@ -23,6 +23,6 @@ export class Palpite {
         )
       );
     }
-    return this.#turnos.pop();
+    return this.#turnos.at(-1);
   }
 }
