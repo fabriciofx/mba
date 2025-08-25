@@ -1,4 +1,4 @@
-import { MemoryStream } from "../helpers/memory-stream.js";
+import { MemoryStream } from "#helpers/memory-stream.js";
 
 test(
   "Escreve no stream",

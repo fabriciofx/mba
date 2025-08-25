@@ -21,5 +21,9 @@
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "imports": {
+    "#src/*": "./src/*",
+    "#helpers/*": "./tests/helpers/*"
   }
 }
