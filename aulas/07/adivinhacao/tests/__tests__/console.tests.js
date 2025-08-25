@@ -1,11 +1,10 @@
-import { Readable } from "stream";
-import { WritableStream } from "memory-streams";
+import { MemoryStream } from "../helpers/memory-stream.js"
 import { Console } from "../../src/console.js"
 
 test(
   "Mostra uma mensagem",
   () => {
-    const stream = new WritableStream();
+    const stream = new MemoryStream();
     const console = new Console({output: stream});
     const msg = "Olá, mundo!";
     console.mostre(msg);
@@ -16,7 +15,7 @@ test(
 test(
   "Mostra duas mensagens seguidas",
   () => {
-    const stream = new WritableStream();
+    const stream = new MemoryStream();
     const console = new Console({output: stream});
     const msg1 = "Olá, mundo!\n";
     const msg2 = "A vida é bela!\n";
@@ -30,7 +29,7 @@ test(
   "Lê um dado",
   () => {
     const msg = "Olá, mundo!";
-    const stream = Readable.from([msg]);
+    const stream = new MemoryStream({data: [msg]});
     const console = new Console({input: stream});
     const dados = console.leia();
     expect(dados).toBe(msg);

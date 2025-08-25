@@ -35,8 +35,8 @@ export class Console {
         break;
       }
     } else {
-      this.#input.setEncoding("utf-8");
-      data = this.#input.read(size);
+      this.#input.setEncoding("utf8");
+      data = this.#input.read(size).toString();
     }
     return data;
   }
