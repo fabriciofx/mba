@@ -1,4 +1,4 @@
-import { Intervalo } from "#src/intervalo.js";
+import { Turno } from "#src/turno.js";
 
 export class Palpite {
   #ui;
@@ -9,16 +9,16 @@ export class Palpite {
     this.#ultimo = [];
   }
 
-  intervalo(intervalo) {
-    if (intervalo != null) {
+  turno(turno) {
+    if (turno != null) {
       this.#ui.mostre(
-        `Adivinhe um número entre ${intervalo.min()} e ${intervalo.max()}: `
+        `Adivinhe um número entre ${turno.min()} e ${turno.max()}: `
       );
       this.#ultimo.push(
-        new Intervalo(
-          intervalo.min(),
-          intervalo.max(),
-          intervalo.secreto(),
+        new Turno(
+          turno.min(),
+          turno.max(),
+          turno.secreto(),
           Number(this.#ui.leia())
         )
       );

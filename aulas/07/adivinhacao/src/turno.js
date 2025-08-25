@@ -1,4 +1,4 @@
-export class Intervalo {
+export class Turno {
   #min;
   #max;
   #secreto;

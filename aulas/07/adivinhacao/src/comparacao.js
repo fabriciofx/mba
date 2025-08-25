@@ -1,17 +1,17 @@
 export class Comparacao {
   #secreto;
   #palpite;
-  #intervalo;
+  #turno;
 
-  constructor(secreto, palpite, intervalo) {
+  constructor(secreto, palpite, turno) {
     this.#secreto = secreto;
     this.#palpite = palpite;
-    this.#intervalo = [ intervalo ];
+    this.#turno = [ turno ];
   }
 
   igual() {
-    this.#intervalo.push(this.#palpite.intervalo(this.#intervalo.pop()));
-    return this.#intervalo.at(0).numero() == this.#secreto;
+    this.#turno.push(this.#palpite.intervalo(this.#turno.pop()));
+    return this.#turno.at(0).numero() == this.#secreto;
   }
 
   palpite() {
