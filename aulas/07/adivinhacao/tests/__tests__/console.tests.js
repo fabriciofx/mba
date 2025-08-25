@@ -2,7 +2,7 @@ import { MemoryStream } from "#helpers/memory-stream.js";
 import { Console } from "#src/console.js";
 
 test(
-  "Mostra uma mensagem",
+  "Deve mostrar uma mensagem",
   () => {
     const stream = new MemoryStream();
     const console = new Console({output: stream});
@@ -13,7 +13,7 @@ test(
 );
 
 test(
-  "Mostra duas mensagens seguidas",
+  "Deve mostrar duas mensagens seguidas",
   () => {
     const stream = new MemoryStream();
     const console = new Console({output: stream});
@@ -26,7 +26,7 @@ test(
 );
 
 test(
-  "Lê um dado",
+  "Deve ler uma frase",
   () => {
     const msg = "Olá, mundo!";
     const stream = new MemoryStream({data: [msg]});
@@ -37,7 +37,7 @@ test(
 );
 
 test(
-  "Tenta ler de um input vazio",
+  "Deve ler uma string vazia de um input vazio",
   () => {
     const input = new MemoryStream();
     const console = new Console({input: input});

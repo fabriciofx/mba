@@ -1,7 +1,7 @@
 import { MemoryStream } from "#helpers/memory-stream.js";
 
 test(
-  "Escreve no stream",
+  "Deve escrever no stream uma frase",
   () => {
     const msg = "Olá, mundo!";
     const stream = new MemoryStream();
@@ -11,7 +11,7 @@ test(
 );
 
 test(
-  "Escreve no stream duas vezes seguidas",
+  "Deve escrever no stream duas vezes seguidas",
   () => {
     const msg1 = "Olá, mundo!";
     const msg2 = "A vida é bela!";
@@ -23,7 +23,7 @@ test(
 );
 
 test(
-  "Lê no stream",
+  "Deve ler do stream uma frase",
   () => {
     const msg = "Olá, mundo!";
     const stream = new MemoryStream({data: [msg]});
@@ -33,7 +33,7 @@ test(
 );
 
 test(
-  "Lê no stream dois dados",
+  "Deve ler do stream duas frases seguidas",
   () => {
     const msg1 = "Olá, mundo!";
     const msg2 = "A vida é bela!";
@@ -45,7 +45,7 @@ test(
 );
 
 test(
-  "Verifica o tamanho quando vazio",
+  "Deve retornar zero para o tamanho de um stream vazio",
   () => {
     const stream = new MemoryStream();
     expect(stream.size()).toBe(0);
@@ -61,7 +61,7 @@ test(
 );
 
 test(
-  "Verifica o quanto foi escrito na memória",
+  "Deve retornar o tamanho em bytes das mensagens escritas",
   () => {
     const msg1 = "Olá, mundo!";
     const msg2 = "A vida é bela!";
@@ -75,7 +75,7 @@ test(
 );
 
 test(
-  "Verifica o tamanho quando dados são passados no construtor",
+  "Deve verificar o tamanho da stream quando dados são passados no construtor",
   () => {
     const msg = "Olá, mundo!";
     const length = Buffer.from(msg).length;
@@ -85,7 +85,7 @@ test(
 );
 
 test(
-  "Verifica se zera o tamanho após ler todo o conteúdo",
+  "Deve retornar tamanho zero após ler todo o conteúdo",
   () => {
     const msg = "Olá, mundo!";
     const length = Buffer.from(msg).length;
@@ -96,7 +96,7 @@ test(
 );
 
 test(
-  "Verifica o tamanho após ler parcialmente o conteúdo",
+  "Deve retornar o tamanho dos dados remanescentes",
   () => {
     const msg1 = "Olá, mundo!";
     const msg2 = "A vida é bela!";
