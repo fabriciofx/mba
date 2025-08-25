@@ -2,11 +2,11 @@ import { Turno } from "#src/turno.js";
 
 export class Palpite {
   #ui;
-  #ultimo;
+  #turnos;
 
   constructor(ui) {
     this.#ui = ui;
-    this.#ultimo = [];
+    this.#turnos = [];
   }
 
   turno(turno) {
@@ -14,7 +14,7 @@ export class Palpite {
       this.#ui.mostre(
         `Adivinhe um número entre ${turno.min()} e ${turno.max()}: `
       );
-      this.#ultimo.push(
+      this.#turnos.push(
         new Turno(
           turno.min(),
           turno.max(),
@@ -23,6 +23,6 @@ export class Palpite {
         )
       );
     }
-    return this.#ultimo.at(-1);
+    return this.#turnos.pop();
   }
 }
