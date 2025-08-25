@@ -6,8 +6,8 @@ export class Console {
   #output;
 
   constructor({input = process.stdin, output = process.stdout} = {}) {
-    this.#output = output;
     this.#input = input;
+    this.#output = output;
   }
 
   mostre(msg) {
@@ -35,8 +35,12 @@ export class Console {
         break;
       }
     } else {
-      this.#input.setEncoding("utf8");
-      data = this.#input.read(size).toString();
+      data = this.#input.read(size);
+      if (data == null) {
+        data = "";
+      } else {
+        data = data.toString();
+      }
     }
     return data;
   }

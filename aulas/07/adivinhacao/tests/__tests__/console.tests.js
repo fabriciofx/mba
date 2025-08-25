@@ -35,3 +35,12 @@ test(
     expect(dados).toBe(msg);
   }
 );
+
+test(
+  "Tenta ler de um input vazio",
+  () => {
+    const input = new MemoryStream();
+    const console = new Console({input: input});
+    expect(console.leia()).toBe("");
+ }
+);
