@@ -39,3 +39,19 @@ test(
     expect(execucoes).toBe(10);
   }
 );
+
+test(
+  "Deve verificar se executa a avaliação de acordo com o máximo especificado",
+  () => {
+    let execucoes = 0;
+    const avaliacao = {
+      igual: () => {
+        execucoes++;
+        return false;
+      }
+    }
+    const tentativas = new Tentativas(avaliacao, 5);
+    tentativas.avalia();
+    expect(execucoes).toBe(5);
+  }
+);
