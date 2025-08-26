@@ -1,4 +1,4 @@
-export class Turno {
+export class Contexto {
   #min;
   #max;
   #secreto;

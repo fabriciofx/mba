@@ -1,29 +1,29 @@
-import { Turno } from "#src/turno.js";
+import { Contexto } from "#src/contexto.js";
 
 export class Palpite {
   #ui;
-  #turnos;
+  #contextos;
 
   constructor(ui) {
     this.#ui = ui;
-    this.#turnos = [];
+    this.#contextos = [];
   }
 
   anterior() {
-    return this.#turnos.at(-1);
+    return this.#contextos.at(-1);
   }
 
-  turno(turno) {
+  turno(contexto) {
     this.#ui.mostre(
-      `Adivinhe um número entre ${turno.min()} e ${turno.max()}: `
+      `Adivinhe um número entre ${contexto.min()} e ${contexto.max()}: `
     );
-    const atual = new Turno(
-      turno.min(),
-      turno.max(),
-      turno.secreto(),
+    const atual = new Contexto(
+      contexto.min(),
+      contexto.max(),
+      contexto.secreto(),
       Number(this.#ui.leia())
     );
-    this.#turnos.push(atual);
+    this.#contextos.push(atual);
     return atual;
   }
 }
