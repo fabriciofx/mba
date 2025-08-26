@@ -22,13 +22,7 @@ test(
   "Deve verificar se executa a avaliação 10 vezes",
   () => {
     let execucoes = 0;
-    const turno = {
-      anterior: () => ({
-        secreto: () => 42
-      })
-    };
     const avaliacao = {
-      turno: () => turno,
       igual: () => {
         execucoes++;
         return false;
