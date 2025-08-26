@@ -1,4 +1,4 @@
-import { Palpite } from "#src/palpite.js";
+import { Turno } from "#src/turno.js";
 import { Avaliacao } from "#src/avaliacao.js";
 import { Inicial } from "#src/contexto.js";
 import { Tentativas } from "#src/tentativas.js";
@@ -18,7 +18,7 @@ export class Adivinhacao {
       new Despedida(
         new Tentativas(
           new Avaliacao(
-            new Palpite(this.#ui),
+            new Turno(this.#ui),
             new Inicial(this.#aleatorio)
           )
         )

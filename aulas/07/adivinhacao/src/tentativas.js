@@ -16,6 +16,6 @@ export class Tentativas {
   }
 
   secreto() {
-    return this.#avaliacao.palpite().anterior().secreto();
+    return this.#avaliacao.turno().anterior().secreto();
   }
 }

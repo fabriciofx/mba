@@ -1,6 +1,6 @@
 import { Contexto } from "#src/contexto.js";
 
-export class Palpite {
+export class Turno {
   #ui;
   #contextos;
 
@@ -13,7 +13,7 @@ export class Palpite {
     return this.#contextos.at(-1);
   }
 
-  turno(contexto) {
+  contexto(contexto) {
     this.#ui.mostre(
       `Adivinhe um número entre ${contexto.min()} e ${contexto.max()}: `
     );

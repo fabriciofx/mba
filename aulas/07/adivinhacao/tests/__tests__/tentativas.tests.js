@@ -4,13 +4,13 @@ test(
   "Deve verificar se o número secreto está correto",
   () => {
     const secreto = 42;
-    const palpite = {
+    const turno = {
       anterior: () => ({
         secreto: () => secreto
       })
     };
     const avaliacao = {
-      palpite: () => palpite,
+      turno: () => turno,
       igual: () => false
     };
     const tentativas = new Tentativas(avaliacao, 5);
@@ -22,13 +22,13 @@ test(
   "Deve verificar se o número secreto está correto",
   () => {
     const secreto = 42;
-    const palpite = {
+    const turno = {
       anterior: () => ({
         secreto: () => secreto
       })
     };
     const avaliacao = {
-      palpite: () => palpite,
+      turno: () => turno,
       igual: () => false
     };
     const tentativas = new Tentativas(avaliacao, 5);

@@ -1,20 +1,20 @@
 export class Avaliacao {
-  #palpite;
+  #turno;
   #contextos;
 
-  constructor(palpite, inicial) {
-    this.#palpite = palpite;
+  constructor(turno, inicial) {
+    this.#turno = turno;
     this.#contextos = [ inicial ];
   }
 
   igual() {
     const anterior = this.#contextos.pop();
-    const atual = this.#palpite.turno(anterior);
+    const atual = this.#turno.contexto(anterior);
     this.#contextos.push(atual);
     return atual.numero() == atual.secreto();
   }
 
-  palpite() {
-    return this.#palpite;
+  turno() {
+    return this.#turno;
   }
 }
