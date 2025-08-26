@@ -1,6 +1,6 @@
 import { Palpite } from "#src/palpite.js";
 import { Comparacao } from "#src/comparacao.js";
-import { Contexto } from "#src/contexto.js";
+import { Inicial } from "#src/contexto.js";
 import { Tentativas } from "#src/tentativas.js";
 import { Despedida } from "#src/despedida.js";
 
@@ -14,18 +14,12 @@ export class Adivinhacao {
   }
 
   execute() {
-    const secreto = this.#aleatorio.numero();
     this.#ui.mostre(
       new Despedida(
         new Tentativas(
           new Comparacao(
-            secreto,
             new Palpite(this.#ui),
-            new Contexto(
-              this.#aleatorio.min(),
-              this.#aleatorio.max(),
-              secreto
-            )
+            new Inicial(this.#aleatorio)
           )
         )
       ).mensagem()

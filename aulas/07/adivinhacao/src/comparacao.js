@@ -1,19 +1,17 @@
 export class Comparacao {
-  #secreto;
   #palpite;
   #contextos;
 
-  constructor(secreto, palpite, contexto) {
-    this.#secreto = secreto;
+  constructor(palpite, inicial) {
     this.#palpite = palpite;
-    this.#contextos = [ contexto ];
+    this.#contextos = [ inicial ];
   }
 
   igual() {
     const anterior = this.#contextos.pop();
     const atual = this.#palpite.turno(anterior);
     this.#contextos.push(atual);
-    return atual.numero() == this.#secreto;
+    return atual.numero() == atual.secreto();
   }
 
   palpite() {

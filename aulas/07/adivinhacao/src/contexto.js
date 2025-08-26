@@ -4,7 +4,7 @@ export class Contexto {
   #secreto;
   #numero;
 
-  constructor(min, max, secreto, numero = 100) {
+  constructor(min, max, secreto, numero) {
     this.#min = min;
     this.#max = max;
     this.#secreto = secreto;
@@ -33,5 +33,30 @@ export class Contexto {
 
   secreto() {
     return this.#secreto;
+  }
+}
+
+export class Inicial extends Contexto {
+  #aleatorio;
+
+  constructor(aleatorio) {
+    super();
+    this.#aleatorio = aleatorio;
+  }
+
+  min() {
+    return this.#aleatorio.min();
+  }
+
+  max() {
+    return this.#aleatorio.max();
+  }
+
+  numero() {
+    return this.#aleatorio.max();
+  }
+
+  secreto() {
+    return this.#aleatorio.numero();
   }
 }
