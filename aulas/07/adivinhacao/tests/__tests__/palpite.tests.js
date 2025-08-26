@@ -30,7 +30,7 @@ test(
     const output = new MemoryStream();
     const console = new Console({input: input, output: output});
     const palpite = new Palpite(console);
-    const contexto = palpite.turno(
+    palpite.turno(
       {
         min: () => 1,
         max: () => 100,
@@ -48,7 +48,7 @@ test(
     const output = new MemoryStream();
     const console = new Console({input: input, output: output});
     const palpite = new Palpite(console);
-    const contexto = palpite.turno(
+    palpite.turno(
       {
         min: () => 10,
         max: () => 90,
