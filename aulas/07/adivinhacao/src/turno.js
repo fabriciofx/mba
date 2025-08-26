@@ -1,4 +1,4 @@
-import { Contexto } from "#src/contexto.js";
+import { Esmagador } from "#src/contexto.js";
 
 export class Turno {
   #ui;
@@ -18,7 +18,7 @@ export class Turno {
     this.#ui.mostre(
       `Adivinhe um número entre ${anterior.min()} e ${anterior.max()}: `
     );
-    const atual = new Contexto(
+    const atual = new Esmagador(
       anterior.min(),
       anterior.max(),
       anterior.secreto(),

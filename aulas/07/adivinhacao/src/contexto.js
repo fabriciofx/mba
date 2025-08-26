@@ -1,10 +1,30 @@
 export class Contexto {
+  min() {
+    throw new Error("Método 'min()' precisa ser implementado.");
+  }
+
+  max() {
+    throw new Error("Método 'max()' precisa ser implementado.");
+  }
+
+  numero() {
+    throw new Error("Método 'numero()' precisa ser implementado.");
+  }
+
+  secreto() {
+    throw new Error("Método 'secreto()' precisa ser implementado.");
+  }
+}
+
+
+export class Esmagador extends Contexto {
   #min;
   #max;
   #secreto;
   #numero;
 
   constructor(min, max, secreto, numero) {
+    super();
     this.#min = min;
     this.#max = max;
     this.#secreto = secreto;
@@ -37,27 +57,63 @@ export class Contexto {
   }
 }
 
-export class Inicial extends Contexto {
-  #aleatorio;
+export class Aleatorio extends Contexto {
+  #min;
+  #max;
+  #secreto;
 
-  constructor(aleatorio) {
+  constructor(min = 1, max = 100) {
     super();
-    this.#aleatorio = aleatorio;
+    this.#min = min;
+    this.#max = max;
+    this.#secreto = Math.floor(Math.random() * (max - min + 1)) + min;
+    Object.freeze(this);
   }
 
   min() {
-    return this.#aleatorio.min();
+    return this.#min;
   }
 
   max() {
-    return this.#aleatorio.max();
+    return this.#max;
   }
 
   numero() {
-    return this.#aleatorio.max();
+    return this.#max;
   }
 
   secreto() {
-    return this.#aleatorio.numero();
+    return this.#secreto;
+  }
+}
+
+export class Planejado extends Contexto {
+  #min;
+  #max;
+  #numero;
+  #secreto;
+
+  constructor(min = 1, max = 100, numero = 100, secreto = 42) {
+    super();
+    this.#min = min;
+    this.#max = max;
+    this.#numero = numero;
+    this.#secreto = secreto;
+  }
+
+  min() {
+    return this.#min;
+  }
+
+  max() {
+    return this.#max;
+  }
+
+  numero() {
+    return this.#numero;
+  }
+
+  secreto() {
+    return this.#secreto;
   }
 }

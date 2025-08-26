@@ -1,16 +1,15 @@
 import { Turno } from "#src/turno.js";
 import { Avaliacao } from "#src/avaliacao.js";
-import { Inicial } from "#src/contexto.js";
 import { Tentativas } from "#src/tentativas.js";
 import { Despedida } from "#src/despedida.js";
 
 export class Adivinhacao {
   #ui;
-  #aleatorio;
+  #inicial;
 
-  constructor(ui, aleatorio) {
+  constructor(ui, inicial) {
     this.#ui = ui;
-    this.#aleatorio = aleatorio;
+    this.#inicial = inicial;
     Object.freeze(this);
   }
 
@@ -20,7 +19,7 @@ export class Adivinhacao {
         new Tentativas(
           new Avaliacao(
             new Turno(this.#ui),
-            new Inicial(this.#aleatorio)
+            this.#inicial
           )
         )
       ).mensagem()
