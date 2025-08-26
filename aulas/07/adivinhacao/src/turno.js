@@ -13,14 +13,14 @@ export class Turno {
     return this.#contextos.at(-1);
   }
 
-  contexto(contexto) {
+  contexto(anterior) {
     this.#ui.mostre(
-      `Adivinhe um número entre ${contexto.min()} e ${contexto.max()}: `
+      `Adivinhe um número entre ${anterior.min()} e ${anterior.max()}: `
     );
     const atual = new Contexto(
-      contexto.min(),
-      contexto.max(),
-      contexto.secreto(),
+      anterior.min(),
+      anterior.max(),
+      anterior.secreto(),
       Number(this.#ui.leia())
     );
     this.#contextos.push(atual);
