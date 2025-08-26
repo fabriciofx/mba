@@ -1,4 +1,4 @@
-export class Comparacao {
+export class Avaliacao {
   #palpite;
   #contextos;
 
