@@ -1,6 +1,20 @@
 import fs from "fs";
 import { Stream } from "stream";
 
+class HasFd {
+  #stream;
+
+  constructor(stream) {
+    this.#stream = stream;
+  }
+
+  value() {
+    return this.#stream instanceof Stream &&
+      "fd" in this.#stream &&
+      typeof this.#stream.fd === "number"
+  }
+}
+
 class ByteByByte {
   #stream;
   #buffer;
@@ -26,6 +40,49 @@ class ByteByByte {
   }
 }
 
+class BlockOfBytes {
+  #buffer;
+  #stream;
+  #size;
+  #bytes;
+
+  constructor(stream, size = 1024) {
+    this.#buffer = Buffer.alloc(size);
+    this.#stream = stream;
+    this.#size = size;
+    this.#bytes = 0;
+  }
+
+  read() {
+      while (true) {
+        try {
+          this.#bytes = fs.readSync(
+            this.#stream.fd,
+            this.#buffer,
+            0,
+            this.#size,
+            null
+          );
+        } catch (err) {
+          if (err.code === "EAGAIN") {
+            continue;
+          }
+          throw err;
+        }
+        break;
+      }
+    return this.#buffer;
+  }
+
+  toString(enconding = "utf8") {
+    return this.read().toString(
+      enconding,
+      0,
+      this.#bytes
+    ).replace(/[\r\n]+$/, "");
+  }
+}
+
 export class Console {
   #input;
   #output;
@@ -40,25 +97,9 @@ export class Console {
   }
 
   leia() {
-    let data = "";
-    const size = 1024;
-    if (this.#input instanceof Stream &&
-      "fd" in this.#input &&
-      typeof this.#input.fd === "number"
-    ) {
-      const buffer = Buffer.alloc(size);
-      while (true) {
-        try {
-          const read = fs.readSync(this.#input.fd, buffer, 0, size, null);
-          data = buffer.toString("utf8", 0, read).replace(/[\r\n]+$/, "");
-        } catch (err) {
-          if (err.code === "EAGAIN") {
-            continue;
-          }
-          throw err;
-        }
-        break;
-      }
+    let data;
+    if (new HasFd(this.#input).value()) {
+      data = new BlockOfBytes(this.#input).toString();
     } else {
       data = new ByteByByte(this.#input).toString();
     }
