@@ -7,7 +7,7 @@ export class Tentativas {
     this.#max = max;
   }
 
-  partidas() {
+  turnos() {
     let t = 0;
     while (t < this.#max && !this.#avalicao.igual()) {
       t++;

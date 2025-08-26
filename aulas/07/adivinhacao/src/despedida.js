@@ -7,7 +7,7 @@ export class Despedida {
 
   mensagem() {
     let msg;
-    if (this.#tentativas.partidas()) {
+    if (this.#tentativas.turnos()) {
       msg = "Parabéns! Você acertou o número!\n";
     } else {
       msg = "Suas tentativas acabaram! O número secreto era " +
