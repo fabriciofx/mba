@@ -5,6 +5,7 @@ export class Aleatorio {
   constructor(min = 1, max = 100) {
     this.#min = min;
     this.#max = max;
+    Object.freeze(this);
   }
 
   numero() {

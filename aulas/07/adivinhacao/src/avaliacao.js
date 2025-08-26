@@ -5,6 +5,7 @@ export class Avaliacao {
   constructor(turno, inicial) {
     this.#turno = turno;
     this.#anterior = [ inicial ];
+    Object.freeze(this);
   }
 
   igual() {

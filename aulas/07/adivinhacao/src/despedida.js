@@ -3,6 +3,7 @@ export class Despedida {
 
   constructor(tentativas) {
     this.#tentativas = tentativas;
+    Object.freeze(this);
   }
 
   mensagem() {

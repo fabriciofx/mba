@@ -5,6 +5,7 @@ export class Tentativas {
   constructor(avaliacao, max = 10) {
     this.#avaliacao = avaliacao;
     this.#max = max;
+    Object.freeze(this);
   }
 
   turnos() {

@@ -9,6 +9,7 @@ export class Contexto {
     this.#max = max;
     this.#secreto = secreto;
     this.#numero = numero;
+    Object.freeze(this);
   }
 
   min() {

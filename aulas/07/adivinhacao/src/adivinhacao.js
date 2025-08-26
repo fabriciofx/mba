@@ -11,6 +11,7 @@ export class Adivinhacao {
   constructor(ui, aleatorio) {
     this.#ui = ui;
     this.#aleatorio = aleatorio;
+    Object.freeze(this);
   }
 
   execute() {

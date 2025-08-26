@@ -6,6 +6,7 @@ class HasFd {
 
   constructor(stream) {
     this.#stream = stream;
+    Object.freeze(this);
   }
 
   value() {
@@ -22,6 +23,7 @@ class ByteByByte {
   constructor(stream, buffer = []) {
     this.#stream = stream;
     this.#buffer = buffer;
+    Object.freeze(this);
   }
 
   read() {
@@ -90,6 +92,7 @@ export class Console {
   constructor({input = process.stdin, output = process.stdout} = {}) {
     this.#input = input;
     this.#output = output;
+    Object.freeze(this);
   }
 
   mostre(msg) {

@@ -7,6 +7,7 @@ export class Turno {
   constructor(ui) {
     this.#ui = ui;
     this.#contextos = [];
+    Object.freeze(this);
   }
 
   anterior() {
