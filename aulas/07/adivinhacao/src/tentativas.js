@@ -1,21 +1,21 @@
 export class Tentativas {
-  #avalicao;
+  #avaliacao;
   #max;
 
   constructor(avaliacao, max = 10) {
-    this.#avalicao = avaliacao;
+    this.#avaliacao = avaliacao;
     this.#max = max;
   }
 
   turnos() {
     let t = 0;
-    while (t < this.#max && !this.#avalicao.igual()) {
+    while (t < this.#max && !this.#avaliacao.igual()) {
       t++;
     }
     return t < this.#max
   }
 
   secreto() {
-    return this.#avalicao.palpite().anterior().secreto();
+    return this.#avaliacao.palpite().anterior().secreto();
   }
 }
