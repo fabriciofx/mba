@@ -19,19 +19,23 @@ test(
 );
 
 test(
-  "Deve verificar se o número secreto está correto",
+  "Deve verificar se executa a avaliação 10 vezes",
   () => {
-    const secreto = 42;
+    let execucoes = 0;
     const turno = {
       anterior: () => ({
-        secreto: () => secreto
+        secreto: () => 42
       })
     };
     const avaliacao = {
       turno: () => turno,
-      igual: () => false
+      igual: () => {
+        execucoes++;
+        return false;
+      }
     };
-    const tentativas = new Tentativas(avaliacao, 5);
-    expect(tentativas.secreto()).toBe(secreto);
+    const tentativas = new Tentativas(avaliacao);
+    tentativas.avalia();
+    expect(execucoes).toBe(10);
   }
 );
