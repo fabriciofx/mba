@@ -10,8 +10,10 @@ export class Comparacao {
   }
 
   igual() {
-    this.#turnos.push(this.#palpite.turno(this.#turnos.pop()));
-    return this.#turnos.at(0).numero() == this.#secreto;
+    const anterior = this.#turnos.pop();
+    const atual = this.#palpite.turno(anterior);
+    this.#turnos.push(atual);
+    return atual.numero() == this.#secreto;
   }
 
   palpite() {

@@ -9,20 +9,21 @@ export class Palpite {
     this.#turnos = [];
   }
 
-  turno(turno) {
-    if (turno != null) {
-      this.#ui.mostre(
-        `Adivinhe um número entre ${turno.min()} e ${turno.max()}: `
-      );
-      this.#turnos.push(
-        new Turno(
-          turno.min(),
-          turno.max(),
-          turno.secreto(),
-          Number(this.#ui.leia())
-        )
-      );
-    }
+  anterior() {
     return this.#turnos.at(-1);
+  }
+
+  turno(turno) {
+    this.#ui.mostre(
+      `Adivinhe um número entre ${turno.min()} e ${turno.max()}: `
+    );
+    const atual = new Turno(
+      turno.min(),
+      turno.max(),
+      turno.secreto(),
+      Number(this.#ui.leia())
+    );
+    this.#turnos.push(atual);
+    return atual;
   }
 }
