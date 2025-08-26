@@ -8,7 +8,7 @@ export class Despedida {
 
   mensagem() {
     let msg;
-    if (this.#tentativas.turnos()) {
+    if (this.#tentativas.avalia()) {
       msg = "Parabéns! Você acertou o número!\n";
     } else {
       msg = "Suas tentativas acabaram! O número secreto era " +

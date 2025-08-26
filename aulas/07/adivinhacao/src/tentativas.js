@@ -8,7 +8,7 @@ export class Tentativas {
     Object.freeze(this);
   }
 
-  turnos() {
+  avalia() {
     let t = 0;
     while (t < this.#max && !this.#avaliacao.igual()) {
       t++;
