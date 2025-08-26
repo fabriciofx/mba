@@ -1,16 +1,16 @@
 export class Avaliacao {
   #turno;
-  #contextos;
+  #anterior;
 
   constructor(turno, inicial) {
     this.#turno = turno;
-    this.#contextos = [ inicial ];
+    this.#anterior = [ inicial ];
   }
 
   igual() {
-    const anterior = this.#contextos.pop();
+    const anterior = this.#anterior.pop();
     const atual = this.#turno.contexto(anterior);
-    this.#contextos.push(atual);
+    this.#anterior.push(atual);
     return atual.numero() == atual.secreto();
   }
 
