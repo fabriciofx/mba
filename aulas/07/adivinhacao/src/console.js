@@ -1,5 +1,6 @@
 import fs from "fs";
 import { Stream } from "stream";
+import { Value, Cached } from "#src/index.js";
 
 class HasFd {
   #stream;
@@ -49,21 +50,23 @@ class BlockOfBytes {
   #bytes;
 
   constructor(stream, size = 1024) {
-    this.#buffer = Buffer.alloc(size);
+    this.#buffer = new Cached(() => Buffer.alloc(size));
     this.#stream = stream;
     this.#size = size;
-    this.#bytes = 0;
+    this.#bytes = new Value(0);
   }
 
   read() {
       while (true) {
         try {
-          this.#bytes = fs.readSync(
-            this.#stream.fd,
-            this.#buffer,
-            0,
-            this.#size,
-            null
+          this.#bytes.write(
+            fs.readSync(
+              this.#stream.fd,
+              this.#buffer,
+              0,
+              this.#size,
+              null
+            )
           );
         } catch (err) {
           if (err.code === "EAGAIN") {
@@ -80,7 +83,7 @@ class BlockOfBytes {
     return this.read().toString(
       enconding,
       0,
-      this.#bytes
+      this.#bytes.read()
     ).replace(/[\r\n]+$/, "");
   }
 }

@@ -1,17 +1,19 @@
+import { Value } from "#src/index.js";
+
 export class Avaliacao {
   #turno;
   #anterior;
 
   constructor(turno, inicial) {
     this.#turno = turno;
-    this.#anterior = [ inicial ];
+    this.#anterior = new Value(inicial);
     Object.freeze(this);
   }
 
   igual() {
-    const anterior = this.#anterior.pop();
+    const anterior = this.#anterior.read();
     const atual = this.#turno.contexto(anterior);
-    this.#anterior.push(atual);
+    this.#anterior.write(atual);
     return atual.numero() == atual.secreto();
   }
 
