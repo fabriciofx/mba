@@ -26,9 +26,9 @@ test(
         ]
       }
     );
-    const consol = new Console({input: input, output: output});
+    const console = new Console({input: input, output: output});
     const adivinhacao = new Adivinhacao(
-      consol,
+      console,
       new Planejado(1, 100, 60, 59)
     );
     adivinhacao.execute();
