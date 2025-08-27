@@ -1,5 +1,5 @@
 import { MemoryStream } from "#helpers/index.js";
-import { Adivinhacao, Console, Planejado } from "#src/index.js";
+import { Adivinhacao, Console, Determinado } from "#src/index.js";
 
 test(
   "Deve verificar a execução completa do jogo",
@@ -29,7 +29,7 @@ test(
     const console = new Console({input: input, output: output});
     const adivinhacao = new Adivinhacao(
       console,
-      new Planejado(1, 100, 59, 60)
+      new Determinado(1, 100, 59, 60)
     );
     adivinhacao.execute();
     expect(output.toString()).toBe(msgs);

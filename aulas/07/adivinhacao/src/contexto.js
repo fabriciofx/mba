@@ -86,7 +86,7 @@ export class Aleatorio extends Contexto {
   }
 }
 
-export class Planejado extends Contexto {
+export class Determinado extends Contexto {
   #min;
   #max;
   #secreto;
