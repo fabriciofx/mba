@@ -1,15 +1,15 @@
 import { Duplex } from "stream";
-import { once } from "#src/index.js";
+import { Value, Cached } from "#src/index.js";
 
 class MemoryArea {
-  #area;
+  #memory;
   #offset;
 
   constructor(data = []) {
-    this.#area = once(
-      () => [Buffer.concat(data.map(datum => Buffer.from(datum)))]
+    this.#memory = new Cached(
+      () => Buffer.concat(data.map(datum => Buffer.from(datum)))
     );
-    this.#offset = [0];
+    this.#offset = new Value(0);
     Object.freeze(this);
   }
 
@@ -20,29 +20,28 @@ class MemoryArea {
     } else {
       tmp = Buffer.from(chunk, encoding);
     }
-    const area = this.#area().shift();
-    this.#area().push(Buffer.concat([area, tmp]));
+    const buffer = this.#memory.read();
+    this.#memory.write(Buffer.concat([buffer, tmp]));
     callback();
   }
 
   read(size) {
-    const offset = this.#offset.shift();
-    const area = this.#area().at(0);
+    const offset = this.#offset.read();
+    const buffer = this.#memory.read();
     const length = typeof size !== "undefined" ? offset + size : 65536;
-    const chunk = area.subarray(offset, length);
-    this.#offset.push(offset + chunk.length);
+    const chunk = buffer.subarray(offset, length);
+    this.#offset.write(offset + chunk.length);
     return chunk;
   }
 
   size() {
-    const area = this.#area().at(0);
-    const offset = this.#offset.at(0);
-    return area.length - offset;
+    const buffer = this.#memory.read();
+    const offset = this.#offset.read();
+    return buffer.length - offset;
   }
 
   content() {
-    const area = this.#area().at(0);
-    return area;
+    return this.#memory.read();
   }
 
   toString(encoding = "utf8") {

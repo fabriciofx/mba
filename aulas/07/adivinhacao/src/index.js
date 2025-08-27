@@ -5,9 +5,9 @@ import { Contexto, Espremido, Aleatorio, Determinado } from "#src/contexto.js";
 import { Despedida } from "#src/despedida.js";
 import { Tentativas } from "#src/tentativas.js";
 import { Turno } from "#src/turno.js";
-import { once } from "#src/once.js";
+import { Value, Cached } from "#src/memory.js";
 
 export {
   Adivinhacao, Avaliacao, Console, Contexto, Espremido, Aleatorio,
-  Determinado, Despedida, Tentativas, Turno, once
+  Determinado, Despedida, Tentativas, Turno, Value, Cached
 };
