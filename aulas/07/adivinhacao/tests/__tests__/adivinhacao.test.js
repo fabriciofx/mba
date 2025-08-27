@@ -29,7 +29,7 @@ test(
     const console = new Console({input: input, output: output});
     const adivinhacao = new Adivinhacao(
       console,
-      new Planejado(1, 100, 60, 59)
+      new Planejado(1, 100, 59, 60)
     );
     adivinhacao.execute();
     expect(output.toString()).toBe(msgs);

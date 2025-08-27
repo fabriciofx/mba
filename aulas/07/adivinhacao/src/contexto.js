@@ -7,12 +7,12 @@ export class Contexto {
     throw new Error("Método 'max()' precisa ser implementado.");
   }
 
-  numero() {
-    throw new Error("Método 'numero()' precisa ser implementado.");
-  }
-
   secreto() {
     throw new Error("Método 'secreto()' precisa ser implementado.");
+  }
+
+  numero() {
+    throw new Error("Método 'numero()' precisa ser implementado.");
   }
 }
 
@@ -47,12 +47,12 @@ export class Esmagador extends Contexto {
     return max;
   }
 
-  numero() {
-    return this.#numero;
-  }
-
   secreto() {
     return this.#secreto;
+  }
+
+  numero() {
+    return this.#numero;
   }
 }
 
@@ -77,27 +77,27 @@ export class Aleatorio extends Contexto {
     return this.#max;
   }
 
-  numero() {
-    return this.#max;
-  }
-
   secreto() {
     return this.#secreto;
+  }
+
+  numero() {
+    return this.#max;
   }
 }
 
 export class Planejado extends Contexto {
   #min;
   #max;
-  #numero;
   #secreto;
+  #numero;
 
-  constructor(min = 1, max = 100, numero = 100, secreto = 42) {
+  constructor(min = 1, max = 100, secreto = 42, numero = 100, ) {
     super();
     this.#min = min;
     this.#max = max;
-    this.#numero = numero;
     this.#secreto = secreto;
+    this.#numero = numero;
   }
 
   min() {
@@ -108,11 +108,11 @@ export class Planejado extends Contexto {
     return this.#max;
   }
 
-  numero() {
-    return this.#numero;
-  }
-
   secreto() {
     return this.#secreto;
+  }
+
+  numero() {
+    return this.#numero;
   }
 }

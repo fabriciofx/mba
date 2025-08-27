@@ -8,7 +8,7 @@ test(
     const output = new MemoryStream();
     const console = new Console({input: input, output: output});
     const turno = new Turno(console);
-    const inicial = new Planejado(10, 90, 90, 42);
+    const inicial = new Planejado(10, 90, 42, 90);
     const contexto = turno.contexto(inicial);
     expect(contexto.min()).toBe(10);
     expect(contexto.max()).toBe(57);
@@ -24,7 +24,7 @@ test(
     const output = new MemoryStream();
     const console = new Console({input: input, output: output});
     const turno = new Turno(console);
-    const inicial = new Planejado(1, 100, 100, 42);
+    const inicial = new Planejado(1, 100, 42, 100);
     turno.contexto(inicial);
     expect(output.toString()).toBe("Adivinhe um número entre 1 e 100: ");
  }
@@ -37,7 +37,7 @@ test(
     const output = new MemoryStream();
     const console = new Console({input: input, output: output});
     const turno = new Turno(console);
-    const inicial = new Planejado(10, 90, 90, 42);
+    const inicial = new Planejado(10, 90, 42, 90);
     turno.contexto(inicial);
     expect(output.toString()).toBe("Adivinhe um número entre 10 e 90: ");
  }

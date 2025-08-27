@@ -7,7 +7,7 @@ test(
     const input = new MemoryStream({input: ["33"]});
     const avaliacao = new Avaliacao(
       new Turno(new Console({input: input})),
-      new Planejado(1, 100, 42, 35)
+      new Planejado(1, 100, 35, 42)
     );
     expect(avaliacao.igual()).toBe(false);
   }

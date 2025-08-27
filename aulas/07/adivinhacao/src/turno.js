@@ -18,11 +18,12 @@ export class Turno {
     this.#ui.mostre(
       `Adivinhe um número entre ${anterior.min()} e ${anterior.max()}: `
     );
+    const numero = Number(this.#ui.leia());
     const atual = new Esmagador(
       anterior.min(),
       anterior.max(),
       anterior.secreto(),
-      Number(this.#ui.leia())
+      numero
     );
     this.#contextos.push(atual);
     return atual;
