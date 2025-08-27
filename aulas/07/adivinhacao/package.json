@@ -14,8 +14,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
-    "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest",
-    "check-imports": "node check/check-imports.js"
+    "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest"
   },
   "devDependencies": {
     "jest": "^30.0.5"
