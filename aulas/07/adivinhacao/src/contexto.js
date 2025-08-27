@@ -16,7 +16,7 @@ export class Contexto {
   }
 }
 
-export class Esmagador extends Contexto {
+export class Espremido extends Contexto {
   #min;
   #max;
   #secreto;

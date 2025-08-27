@@ -1,4 +1,4 @@
-import { Esmagador } from "#src/index.js";
+import { Espremido } from "#src/index.js";
 
 export class Turno {
   #ui;
@@ -19,7 +19,7 @@ export class Turno {
       `Adivinhe um número entre ${anterior.min()} e ${anterior.max()}: `
     );
     const numero = Number(this.#ui.leia());
-    const atual = new Esmagador(
+    const atual = new Espremido(
       anterior.min(),
       anterior.max(),
       anterior.secreto(),
