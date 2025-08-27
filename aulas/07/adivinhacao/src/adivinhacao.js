@@ -1,7 +1,4 @@
-import { Turno } from "#src/turno.js";
-import { Avaliacao } from "#src/avaliacao.js";
-import { Tentativas } from "#src/tentativas.js";
-import { Despedida } from "#src/despedida.js";
+import { Despedida, Tentativas, Avaliacao, Turno } from "#src/index.js";
 
 export class Adivinhacao {
   #ui;

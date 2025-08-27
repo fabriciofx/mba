@@ -1,6 +1,4 @@
-import { Console } from "#src/console.js";
-import { Aleatorio } from "#src/contexto.js";
-import { Adivinhacao } from "#src/adivinhacao.js";
+import { Adivinhacao, Console, Aleatorio } from "#src/index.js";
 
 const jogo = new Adivinhacao(new Console(), new Aleatorio());
 jogo.execute();

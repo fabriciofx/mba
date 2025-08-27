@@ -1,4 +1,4 @@
-import { Tentativas } from "#src/tentativas.js";
+import { Tentativas } from "#src/index.js";
 
 test(
   "Deve verificar se o número secreto está correto",

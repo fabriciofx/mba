@@ -1,6 +1,5 @@
-import { MemoryStream } from "#helpers/memory-stream.js";
-import { Console } from "#src/console.js";
-import { Turno } from "#src/turno.js";
+import { MemoryStream } from "#helpers/index.js";
+import { Console, Turno, Planejado } from "#src/index.js";
 
 test(
   "O contexto do deve estar de acordo com as informações iniciais",
@@ -9,11 +8,7 @@ test(
     const output = new MemoryStream();
     const console = new Console({input: input, output: output});
     const turno = new Turno(console);
-    const inicial = {
-      min: () => 10,
-      max: () => 90,
-      secreto: () => 42
-    };
+    const inicial = new Planejado(10, 90, 90, 42);
     const contexto = turno.contexto(inicial);
     expect(contexto.min()).toBe(10);
     expect(contexto.max()).toBe(57);
@@ -29,11 +24,7 @@ test(
     const output = new MemoryStream();
     const console = new Console({input: input, output: output});
     const turno = new Turno(console);
-    const inicial = {
-      min: () => 1,
-      max: () => 100,
-      secreto: () => 42
-    };
+    const inicial = new Planejado(1, 100, 100, 42);
     turno.contexto(inicial);
     expect(output.toString()).toBe("Adivinhe um número entre 1 e 100: ");
  }
@@ -46,11 +37,7 @@ test(
     const output = new MemoryStream();
     const console = new Console({input: input, output: output});
     const turno = new Turno(console);
-    const inicial = {
-      min: () => 10,
-      max: () => 90,
-      secreto: () => 42
-    };
+    const inicial = new Planejado(10, 90, 90, 42);
     turno.contexto(inicial);
     expect(output.toString()).toBe("Adivinhe um número entre 10 e 90: ");
  }

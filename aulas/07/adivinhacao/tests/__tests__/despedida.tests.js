@@ -1,4 +1,4 @@
-import { Despedida } from "#src/despedida.js";
+import { Despedida } from "#src/index.js";
 
 test(
   "Deve mostrar a mensagem 'Parabéns! Você acertou o número!'",

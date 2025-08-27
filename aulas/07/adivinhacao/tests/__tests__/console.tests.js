@@ -1,5 +1,5 @@
-import { MemoryStream } from "#helpers/memory-stream.js";
-import { Console } from "#src/console.js";
+import { MemoryStream } from "#helpers/index.js";
+import { Console } from "#src/index.js";
 
 test(
   "Deve mostrar uma mensagem",

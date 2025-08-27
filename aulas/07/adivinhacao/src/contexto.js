@@ -16,7 +16,6 @@ export class Contexto {
   }
 }
 
-
 export class Esmagador extends Contexto {
   #min;
   #max;

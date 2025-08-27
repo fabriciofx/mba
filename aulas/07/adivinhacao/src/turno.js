@@ -1,4 +1,4 @@
-import { Esmagador } from "#src/contexto.js";
+import { Esmagador } from "#src/index.js";
 
 export class Turno {
   #ui;

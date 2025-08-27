@@ -1,7 +1,5 @@
-import { Avaliacao } from "#src/avaliacao.js";
-import { Turno } from "#src/turno.js";
-import { Console } from "#src/console.js";
-import { MemoryStream } from "#helpers/memory-stream.js";
+import { MemoryStream } from "#helpers/index.js";
+import { Avaliacao, Turno, Console, Planejado } from "#src/index.js";
 
 test(
   "Deve verificar se o número informado é diferente do secreto",
@@ -9,14 +7,9 @@ test(
     const input = new MemoryStream({input: ["33"]});
     const avaliacao = new Avaliacao(
       new Turno(new Console({input: input})),
-      {
-        min: () => 1,
-        max: () => 100,
-        secreto: () => 42,
-        numero: () => 35
-      }
-    ).igual();
-    expect(avaliacao).toBe(false);
+      new Planejado(1, 100, 42, 35)
+    );
+    expect(avaliacao.igual()).toBe(false);
   }
 );
 
@@ -26,13 +19,8 @@ test(
     const input = new MemoryStream({data: ["42"]});
     const avaliacao = new Avaliacao(
       new Turno(new Console({input: input})),
-      {
-        min: () => 1,
-        max: () => 100,
-        secreto: () => 42,
-        numero: () => 42
-      }
-    ).igual();
-    expect(avaliacao).toBe(true);
+      new Planejado(1, 100, 42, 42)
+    );
+    expect(avaliacao.igual()).toBe(true);
   }
 );
