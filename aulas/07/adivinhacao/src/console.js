@@ -62,7 +62,7 @@ class BlockOfBytes {
           this.#bytes.write(
             fs.readSync(
               this.#stream.fd,
-              this.#buffer,
+              this.#buffer.read(),
               0,
               this.#size,
               null
