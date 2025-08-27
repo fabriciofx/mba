@@ -5,7 +5,7 @@ test(
   () => {
     const secreto = 42;
     const turno = {
-      anterior: () => ({
+      atual: () => ({
         secreto: () => secreto
       })
     };

@@ -2,19 +2,19 @@ import { Value } from "#src/index.js";
 
 export class Avaliacao {
   #turno;
-  #anterior;
+  #atual;
 
   constructor(turno, inicial) {
     this.#turno = turno;
-    this.#anterior = new Value(inicial);
+    this.#atual = new Value(inicial);
     Object.freeze(this);
   }
 
   igual() {
-    const anterior = this.#anterior.read();
-    const atual = this.#turno.contexto(anterior);
-    this.#anterior.write(atual);
-    return atual.numero() == atual.secreto();
+    const atual = this.#atual.read();
+    const proximo = this.#turno.contexto(atual);
+    this.#atual.write(proximo);
+    return proximo.numero() == proximo.secreto();
   }
 
   turno() {

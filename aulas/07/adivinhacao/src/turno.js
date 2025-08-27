@@ -10,22 +10,22 @@ export class Turno {
     Object.freeze(this);
   }
 
-  anterior() {
+  atual() {
     return this.#contextos.at(-1);
   }
 
-  contexto(anterior) {
+  contexto(atual) {
     this.#ui.mostre(
-      `Adivinhe um número entre ${anterior.min()} e ${anterior.max()}: `
+      `Adivinhe um número entre ${atual.min()} e ${atual.max()}: `
     );
     const numero = Number(this.#ui.leia());
-    const atual = new Espremido(
-      anterior.min(),
-      anterior.max(),
-      anterior.secreto(),
+    const proximo = new Espremido(
+      atual.min(),
+      atual.max(),
+      atual.secreto(),
       numero
     );
-    this.#contextos.push(atual);
-    return atual;
+    this.#contextos.push(proximo);
+    return proximo;
   }
 }
