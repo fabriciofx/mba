@@ -6,7 +6,7 @@ class MemoryArea {
 
   constructor(data = []) {
     this.#area = Buffer.concat(data.map(datum => Buffer.from(datum)));
-    this.#offset = 0;
+    this.#offset = [0];
   }
 
   write(chunk, encoding, callback) {
@@ -21,14 +21,15 @@ class MemoryArea {
   }
 
   read(size) {
-    const length = typeof size !== "undefined" ? this.#offset + size : 65536;
-    const chunk = this.#area.subarray(this.#offset, length);
-    this.#offset = this.#offset + chunk.length;
+    const off = this.#offset.shift();
+    const length = typeof size !== "undefined" ? off + size : 65536;
+    const chunk = this.#area.subarray(off, length);
+    this.#offset.push(off + chunk.length);
     return chunk;
   }
 
   size() {
-    return this.#area.length - this.#offset;
+    return this.#area.length - this.#offset.at(0);
   }
 
   content() {
