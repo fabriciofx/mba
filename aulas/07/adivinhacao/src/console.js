@@ -57,12 +57,13 @@ class BlockOfBytes {
   }
 
   read() {
+    const buf = this.#buffer.read()
       while (true) {
         try {
           this.#bytes.write(
             fs.readSync(
               this.#stream.fd,
-              this.#buffer.read(),
+              buf,
               0,
               this.#size,
               null
@@ -76,7 +77,7 @@ class BlockOfBytes {
         }
         break;
       }
-    return this.#buffer;
+    return buf;
   }
 
   toString(enconding = "utf8") {
