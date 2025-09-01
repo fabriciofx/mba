@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node src/app.js",
     "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest",
-    "update-deps": "npx npm-check-updates -u && npm install"
+    "update": "npx npm-check-updates -u && npm install"
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
