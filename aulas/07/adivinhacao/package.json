@@ -15,10 +15,10 @@
   "scripts": {
     "start": "node src/app.js",
     "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest",
-    "update-deps": "npx npm-check-updates -u && npm install"
+    "update": "npx npm-check-updates -u && npm install"
   },
   "devDependencies": {
-    "jest": "^30.1.2",
+    "jest": "^30.1.3",
     "npm-check-updates": "^18.0.3"
   },
   "imports": {
