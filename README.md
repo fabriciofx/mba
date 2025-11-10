@@ -2,7 +2,7 @@
 
 ## Cronograma das aulas
 
-![Cronograma 2025/2026 - Turma 06](https://bit.ly/cronograma_t06_full_stack)
+[Cronograma 2025/2026 - Turma 06](https://bit.ly/cronograma_t06_full_stack)
 
 ## Resumos, anotações e material das aulas
 
