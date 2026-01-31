@@ -26,6 +26,7 @@
 14. [MERN Bootcamp I - 18-10-2025](aulas/18-10-2025)
 15. [MERN Bootcamp II - 08-11-2025](aulas/08-11-2025/)
 16. [Cloud & DevOps - 17-01-2026](aulas/17-01-2026/)
+17. [Cloud & DevOps - 31-01-2026](aulas/31-01-2026/)
 
 ## Fotos da turma
 
