@@ -1,0 +1,38 @@
+@startuml pipeline
+
+hide empty description
+
+state "Security Scan" as SecurityScan
+state "Deploy\nHomologação" as DeployHomologacao
+state "Smoke\nTestes" as SmokeTestes
+state "Deploy\nProdução\n(5% tráfego)" as DeployProducao5
+state "Deploy\nProdução\n(10% tráfego)" as DeployProducao10
+state "Deploy\nProdução\n(25% tráfego)" as DeployProducao25
+state "Deploy\nProdução\n(50% tráfego)" as DeployProducao50
+state "Deploy\nProdução\n(100% tráfego)" as DeployProducao100
+
+[*] --> Build
+Build --> Testes : ok
+Build --> Abort : falhou
+Testes --> SecurityScan : ok
+Testes --> Abort : falhou
+SecurityScan --> Package : ok
+SecurityScan --> Abort : falhou
+Package --> DeployHomologacao : ok
+Package --> Abort : falhou
+DeployHomologacao --> SmokeTestes : ok
+DeployHomologacao --> Abort : falhou
+SmokeTestes --> DeployProducao5: ok
+SmokeTestes --> Abort : falhou
+DeployProducao5 --> DeployProducao10 : ok
+DeployProducao5 --> Rollback: falhou
+DeployProducao10 --> DeployProducao25 : ok
+DeployProducao10 --> Rollback: falhou
+DeployProducao25 --> DeployProducao50 : ok
+DeployProducao25 --> Rollback: falhou
+DeployProducao50 --> DeployProducao100 : ok
+DeployProducao50 --> Rollback: falhou
+DeployProducao100 --> [*]
+DeployProducao100 --> Rollback: falhou
+
+@enduml
