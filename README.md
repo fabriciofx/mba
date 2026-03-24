@@ -28,6 +28,7 @@
 16. [Cloud & DevOps - 17-01-2026](aulas/17-01-2026/)
 17. [Cloud & DevOps - 31-01-2026](aulas/31-01-2026/)
 18. [Cultura DevOps & Docker - 07-02-2026](aulas/07-02-2026/)
+19. [Cultura DevOps & Docker - 21-03-2026](aulas/21-03-2026/)
 
 ## Fotos da turma
 
