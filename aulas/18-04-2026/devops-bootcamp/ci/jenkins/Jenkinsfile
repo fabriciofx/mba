@@ -1,0 +1,51 @@
+pipeline {
+  agent any
+
+  options {
+    timestamps()
+  }
+
+  environment {
+    NAMESPACE = "todo"
+    IMAGE_REPO = "todo-api"
+    REGISTRY_PUSH = "kind-registry:5000"
+    REGISTRY_DEPLOY = "localhost:5000"
+  }
+
+  stages {
+    stage('Init') {
+      steps {
+        script {
+          env.IMAGE_TAG = sh(returnStdout: true, script: "git rev-parse --short=8 HEAD").trim()
+          echo "IMAGE_TAG=${env.IMAGE_TAG}"
+        }
+      }
+    }
+
+    stage('Test (Docker build target)') {
+      steps {
+        sh "docker build --target test -t ${IMAGE_REPO}-test:${IMAGE_TAG} services/todo-api"
+      }
+    }
+
+    stage('Build Image') {
+      steps {
+        sh "docker build -t ${REGISTRY_PUSH}/${IMAGE_REPO}:${IMAGE_TAG} services/todo-api"
+      }
+    }
+
+    stage('Push Image') {
+      steps {
+        sh "docker push ${REGISTRY_PUSH}/${IMAGE_REPO}:${IMAGE_TAG}"
+      }
+    }
+
+    stage('Deploy to Kubernetes') {
+      steps {
+        sh "kubectl apply -f k8s"
+        sh "kubectl -n ${NAMESPACE} set image deploy/todo-api todo-api=${REGISTRY_DEPLOY}/${IMAGE_REPO}:${IMAGE_TAG}"
+        sh "kubectl -n ${NAMESPACE} rollout status deploy/todo-api"
+      }
+    }
+  }
+}

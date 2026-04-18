@@ -1,0 +1,44 @@
+services:
+  dind:
+    image: docker:27-dind
+    privileged: true
+    environment:
+      DOCKER_TLS_CERTDIR: ""
+    command:
+      - "--insecure-registry=kind-registry:5000"
+    volumes:
+      - dind-data:/var/lib/docker
+    networks:
+      - jenkins
+      - kind
+
+  jenkins:
+    build:
+      context: ../..
+      dockerfile: ci/jenkins/Dockerfile
+    container_name: bootcamp-jenkins
+    environment:
+      DOCKER_HOST: "tcp://dind:2375"
+      DOCKER_BUILDKIT: "1"
+      KUBECONFIG: "/var/jenkins_home/.kube/config"
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins-home:/var/jenkins_home
+      - ./.local/kubeconfig.yaml:/var/jenkins_home/.kube/config:ro
+    depends_on:
+      - dind
+    networks:
+      - jenkins
+      - kind
+
+volumes:
+  jenkins-home:
+  dind-data:
+
+networks:
+  jenkins:
+  kind:
+    external: true
+    name: kind

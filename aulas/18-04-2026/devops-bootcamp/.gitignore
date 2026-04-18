@@ -1,0 +1,14 @@
+**/node_modules
+**/.env
+**/.DS_Store
+
+# Terraform
+**/.terraform
+**/.terraform.lock.hcl
+**/terraform.tfstate
+**/terraform.tfstate.backup
+**/crash.log
+
+# Jenkins (local)
+ci/jenkins/jenkins_home
+ci/jenkins/.local
