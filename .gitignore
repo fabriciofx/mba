@@ -1,3 +1,16 @@
 .DS_Store
+node_modules/
+target/
 .vscode/
-**/node_modules/
+.idea/
+.mvn/
+*.iml
+.project
+.settings
+.classpath
+.recommenders
+sonar-project.properties
+*.class
+*.log
+session*.md
+dependency-reduced-pom.xml
