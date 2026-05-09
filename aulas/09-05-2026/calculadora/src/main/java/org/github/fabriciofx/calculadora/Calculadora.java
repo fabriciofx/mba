@@ -1,5 +1,7 @@
 package org.github.fabriciofx.calculadora;
 
+import java.math.BigDecimal;
+
 public final class Calculadora {
     public double soma(double left, double right) {
         return left + right;

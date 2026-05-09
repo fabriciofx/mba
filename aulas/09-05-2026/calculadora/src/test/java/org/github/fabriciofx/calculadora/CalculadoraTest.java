@@ -4,6 +4,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public final class CalculadoraTest {
     static Calculadora calculadora;
@@ -94,6 +96,30 @@ public final class CalculadoraTest {
             ArithmeticException.class,
             () -> calculadora.divide(2, 0),
             "Deve impedir divisão por zero"
+        );
+    }
+
+    @ParameterizedTest
+    @CsvSource({"0.5, 1.0, 1.5", "2.1, 2.3, 4.4", "0.0, 0.0, 0.0"})
+    public void deveSomarValores(
+        final double left,
+        final double right,
+        final double resultado
+    ) {
+        Assertions.assertEquals(resultado, calculadora.soma(left, right));
+    }
+
+    @ParameterizedTest
+    @CsvSource({"0.5, 1.0, -0.5", "2.5, 2.4, 0.1", "0.0, 0.0, 0.0"})
+    public void deveSubtrairValores(
+        final double left,
+        final double right,
+        final double resultado
+    ) {
+        Assertions.assertEquals(
+            resultado,
+            calculadora.subtrai(left, right),
+            0.001
         );
     }
 }
