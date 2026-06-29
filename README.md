@@ -32,7 +32,7 @@
 20. [Kubernets e Terraform - 18-04-2026](aulas/18-04-2026/)
 21. [Teste de Software I](aulas/09-05-2026/)
 22. [Teste de Software II](aulas/23-05-2026/)
-23. [Hackathon ConfraPag](hackaton/)
+23. [Hackathon ConfraPag](hackathon/)
    - Apresentação do Projeto
      - [Kofrinho](hackathon/kofrinho-27-06-2026.pdf)
    - Fotos
